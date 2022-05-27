@@ -1,0 +1,64 @@
+TVTOT TV watching, total time on average weekday
+TVPOL TV watching, news/politics/current affairs on average weekday
+RDTOT Radio listening, total time on average weekday
+RDPOL Radio listening, news/politics/current affairs on average weekday
+NWSPTOT Newspaper reading, total time on average weekday
+NWSPPOL Newspaper reading, politics/current affairs on average weekday
+NWSPOL News about politics and current affairs, watching, reading or listening, in minutes
+NETUSOFT Internet use, how often
+NETUSE Personal use of internet/e-mail/www
+NETUSTM Internet use, how much time on typical day, in minutes
+PPLTRST Most people can be trusted or you can't be too careful
+PPLFAIR Most people try to take advantage of you, or try to be fair
+PPLHLP Most of the time people helpful or mostly looking out for thems
+
+POLINTR How interested in politics
+PSPPSGV Political system allows people to have a say in what government does
+PSPPSGVA Political system allows people to have a say in what government does
+ACTROLG Able to take active role in political group
+ACTROLGA Able to take active role in political group
+PSPPIPL Political system allows people to have influence on politics
+PSPPIPLA Political system allows people to have influence on politics
+CPTPPOL Confident in own ability to participate in politics
+CPTPPOLA Confident in own ability to participate in politics
+POLCMPL Politics too complicated to understand
+POLDCS Making mind up about political issues
+TRSTPRL Trust in country's parliament
+TRSTLGL Trust in the legal system
+TRSTPLC Trust in the police
+TRSTPLT Trust in politicians
+TRSTPRT Trust in political parties
+TRSTEP Trust in the European Parliament
+TRSTUN Trust in the United Nations
+VOTE Voted last national election
+CONTPLT Contacted politician or government official last 12 months
+WRKPRTY Worked in political party or action group last 12 months
+WRKORG Worked in another organisation or association last 12 months
+BADGE Worn or displayed campaign badge/sticker last 12 months
+SGNPTIT Signed petition last 12 months
+PBLDMN Taken part in lawful public demonstration last 12 months
+BCTPRD Boycotted certain products last 12 months
+CLSPRTY Feel closer to a particular party than all other parties
+PRTDGCL How close to party
+MMBPRTY Member of political party
+LRSCALE Placement on left right scale
+STFLIFE How satisfied with life as a whole
+STFECO How satisfied with present state of economy in country
+STFGOV How satisfied with the national government
+STFDEM How satisfied with the way democracy works in country
+STFEDU State of education in country nowadays
+STFHLTH State of health services in country nowadays
+GINCDIF Government should reduce differences in income levels
+FREEHMS Gays and lesbians free to live life as they wish
+PRTYBAN Ban political parties that wish overthrow democracy
+SCNSENV Modern science can be relied on to solve environmental problems
+EUFTF European Union: European unification go further or gone too far
+IMSMETN Allow many/few immigrants of same race/ethnic group as majority
+IMDFETN Allow many/few immigrants of different race/ethnic group from majority
+IMPCNTR Allow many/few immigrants from poorer countries outside Europe
+IMBGECO Immigration bad or good for country's economy
+IMUECLT Country's cultural life undermined or enriched by immigrants
+IMWBCNT Immigrants make country worse or better place to live
+PSTPLONL Posted or shared anything about politics online last 12 months
+HMSFMLSH Ashamed if close family member gay or lesbian
+HMSACLD Gay and lesbian couples right to adopt children

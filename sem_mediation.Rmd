@@ -1,0 +1,40 @@
+# Mediation: Trust, poltical interest, and ability
+
+Here we model the influence of political interest on political ability, including the
+indirect effect of political interest through government trust. We also consider the influence of 
+trust in people on government trust.
+
+The mediation model is written as 
+\begin{verbatim}
+    # Trust in government
+    gov_trust =~ trstprl + trstprt + trstep + trstun
+    # Trust in people
+    people_trust =~ ppltrst + pplfair + pplhlp 
+    # Poltical ability
+    poltical_able =~ psppipla + psppsgva + cptppola
+    # Add residual covariance
+    trstep ~~ trstun
+    trstprl ~~ trstep
+    # Direct effect(s)
+    poltical_able ~ c1*polintr
+    # Mediator
+    # Path A
+    gov_trust ~ a1\*people_trust + a2\*polintr
+    # Path B
+    poltical_able ~ b1*gov_trust
+    # Indirect effect
+    ab_trust := a1*b1
+    ab_interest := a2*b1
+    # Total effect
+    total_interest := c1 + ab_interest
+\end{verbatim}
+
+```{r mediation, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+library("lavaan")
+fit_med <- fit_mediation_model(df_subset)
+caption <- "Three-factor medidation model, considering structural relationship 
+    between trust in people and trust in government"
+label <- "three-fact-mediation"
+print_fit(fit_med, caption, label)
+```
+Table \ref{tab:three-fact-mediation} shows the estimates for the mediation model.

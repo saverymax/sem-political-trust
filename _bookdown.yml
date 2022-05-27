@@ -1,0 +1,4 @@
+book_filename: "structural-equation-politics"
+rmd_files: ["index.Rmd", "sem_exploratory.Rmd", "sem_trust.Rmd", "sem_political.Rmd",
+    "sem_mediation.Rmd", "conclusion.Rmd"]
+delete_merged_file: true

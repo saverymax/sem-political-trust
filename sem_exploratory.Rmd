@@ -1,0 +1,49 @@
+# Introduction
+
+We introduce the topic of this report: We conduct structural equations modelling
+on European Social Survey data, in order to 
+
+This report focuses on the relationship between individual's trust in government,
+trust in others, and perceived political ability. We use 
+European Social Survey (ESS) data in this work, with only responses from round 9 \cite{ESS-2018}, as that had all the variables we wanted to include in this study. 
+We split them into three categories, which will become our latent 
+variables: Extent of trust in government or institutions, social trust (or general trust in people), and the extent to which people perceive it possible to participate in their country's political system. In a mediation analysis described later, we will also consider the effect of political interest
+on trust in government. The variables used in the analysis are shown in Table \ref{tab:var_desc} and are taken from the ESS documentation \cite{ESS-2021}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+    \toprule
+    Variable & Description \\
+    \midrule
+     Trust in people & \\
+     PPLTRST & Most people can be trusted or you can't be too careful \\
+     PPLFAIR & Most people try to take advantage of you, or try to be fair \\
+     PPLHLP & Most of the time people helpful or mostly looking out for themselves \\
+     \hline
+     Poltical Ability &\\
+     PSPPSGVA & Political system allows people to have a say in what government does \\
+     ACTROLGA & Able to take active role in political group \\
+     PSPPIPLA & Political system allows people to have influence on politics \\
+     CPTPPOLA & Confident in own ability to participate in politics \\
+     POLINTR & How interested in politics \\
+     \hline
+     Poltical Trust &\\
+     TRSTPRL & Trust in country's parliament \\
+     TRSTPLT & Trust in politicians \\
+     TRSTPRT & Trust in political parties \\
+     TRSTEP & Trust in the European Parliament \\
+     TRSTUN & Trust in the United Nations \\
+     \hline 
+     \bottomrule
+    \end{tabular}
+    \caption{Selected variables from ESS and propsed latent constructs}
+    \label{tab:var_desc}
+\end{table}
+
+Before we can begin with CFA and SEM, We first discuss the correlation present in the data.
+
+```{r exploratory, results='hide', echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Correlation between variables related to government trust, social trust, and poltical ability."}
+library("corrplot")     
+exploratory_plots(df_subset)
+```

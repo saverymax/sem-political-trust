@@ -1,0 +1,35 @@
+# Modelling trust in government
+
+Here we investigate the CFA model for the latent factor trust in government.
+We first fit a one-factor CFA model with variables 
+\begin{verbatim}
+gov_trust =~ trstprl + trstprt + trstplt  + trstep + trstun
+\end{verbatim}
+Table \ref{tab:one-fact-trust} shows the standardized solution for the one-factor model. It can be seen that the standardized loadings are all greater than $0.6$. In fact, all loadings for trust in government institutions are quite high, with only trust in the U.N. somewhat lower at $0.66$. We then examine the modification indices in Table \ref{tab:one-fact-mi}. Given the
+high value for the trstplt variable, we remove this variable, add covariances \verb+trstep ~~ trstun+
+and \verb+trstprl ~~ trstep+. 
+```{r trust, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+library("lavaan")
+fit_trust <- fit_trust_model(df_subset)
+caption <- "One-factor CFA for trust in government"
+label <- "one-fact-trust"
+print_fit(fit_trust, caption, label)
+caption <- "Modification indices for one-factor model. Top 10 are shown."
+label <- "one-fact-mi"
+print_mi(fit_trust, caption, label)
+```
+We refit the model, for which the standardized solution
+for this new model is shown in Table \ref{tab:one-fact-trust-adj}. We then compare
+the two models in Table \ref{tab:one-fact-compare} and see that the modified model
+does in fact fit better.
+
+Initially, it was not clear if the trust-related indicators could be represented 
+with a latent factor. These results indicate that representing trust in government with a CFA model 
+is possible and produces a reasonable model.
+```{r trust_adj, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+fit_trust_adj <- fit_trust_model_adj(df_subset)
+caption <- paste("One-factor CFA for trust in government, allowing for residual covariances")
+label <- paste("one-fact-trust-adj")
+print_fit(fit_trust_adj, caption, label)
+compare_one_factor(fit_trust, fit_trust_adj)
+```

@@ -1,0 +1,9 @@
+# Multi-group model
+
+```{r multi-group, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+library("lavaan")
+fit_multi <- fit_multigroup_model(df_subset)
+caption <- paste("Three-factor multi-group (based on gender) model for trust in government, trust in people, and political ability ")
+label <- paste("three-fact-multi-group")
+print_fit(fit_multi, caption, label)
+```

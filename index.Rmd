@@ -1,7 +1,7 @@
 ---
 title: "Structural Equation Modelling of Political Trust and Ability"
 author: "Max Savery"
-date: "`r Sys.Date()`"
+date: "Academic year 2021-2022, 2nd semester\\`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: article
 output: bookdown::gitbook
@@ -13,28 +13,30 @@ description: "Bookdown for structural equations project"
 ---
 # Technical preface
 
-This is the bookdown report for the Structural Equations Modelling course. Bookdown was chosen 
+This is the bookdown \citep{R-bookdown} report for the Structural Equations Modelling course. Bookdown was chosen 
 as the medium for generating the report as part of my personal effort to support 
-reproducible computational science. 
+reproducible computational science. The lavaan package \citep{R-lavaan} was used for all structural equation models.
 
-The code for this report can be found at https://github.com/saverymax/sem-political-trust.
-To render the book, run bookdown::render_book('index.Rmd', 'bookdown::pdf_book'). 
-That being said, given the time constraints of the semester and finishing my master's thesis, the bookdown report isn't perfect.
-, "sem_exploratory.Rmd", "sem_trust.Rmd", "sem_political.Rmd",
-    "sem_mediation.Rmd", "conclusion.Rmd"
-It may also need to do setwd("d:/asus_documents/ku_leuven/courses/structural_equations/project/bookdown")
+The bookdown report is hosted at <https://saverymax.github.io/sem-political-trust/>. The R/Rmd code for the report can be found here: <https://github.com/saverymax/sem-political-trust>. The plain R script to run 
+all the code used in this report is available at <https://github.com/saverymax/sem-political-trust/blob/main/Max_Savery_SEM_project_code.R>
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
+To locally render the book, install bookdown and run 
 ```
-
+install.packages("bookdown")
+bookdown::render_book('index.Rmd', 'bookdown::pdf_book')
+```
+That being said, given the time constraints of the semester and finishing my master's thesis, the bookdown report isn't perfect. But having a more-or-less well-documented and reproducible project
+is better than not having one at all.
 ```{r libs, include=FALSE}
 library("dplyr")    
 library("lavaan")    
 library("corrplot")     
 library("tidySEM")
 library("kableExtra")
+```
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
 ```
 ```{r env, include=FALSE}
 #user_dir <- "d:/asus_documents/ku_leuven/courses/structural_equations/project/"

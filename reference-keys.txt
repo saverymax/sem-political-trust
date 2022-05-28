@@ -16,6 +16,6 @@ tab:three-fact-mediation
 technical-preface
 introduction
 modelling-trust-in-government
-poltical-ability-and-trust
+political-ability-and-trust
 mediation-trust-poltical-interest-and-ability
 discussion

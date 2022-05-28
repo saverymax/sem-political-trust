@@ -23,7 +23,6 @@
 <meta name="author" content="Max Savery" />
 
 
-<meta name="date" content="2022-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -76,7 +75,7 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Technical preface</a></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="modelling-trust-in-government.html"><a href="modelling-trust-in-government.html"><i class="fa fa-check"></i><b>3</b> Modelling trust in government</a></li>
-<li class="chapter" data-level="4" data-path="poltical-ability-and-trust.html"><a href="poltical-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Poltical ability and trust</a></li>
+<li class="chapter" data-level="4" data-path="political-ability-and-trust.html"><a href="political-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Political ability and trust</a></li>
 <li class="chapter" data-level="5" data-path="mediation-trust-poltical-interest-and-ability.html"><a href="mediation-trust-poltical-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: Trust, poltical interest, and ability</a></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
 <li class="divider"></li>
@@ -110,7 +109,10 @@ We split them into three categories, which will become our latent
 variables: Extent of trust in government or institutions, social trust (or general trust in people), and the extent to which people perceive it possible to participate in their country’s political system. In a mediation analysis described later, we will also consider the effect of political interest
 on trust in government. The variables used in the analysis are shown in Table  and are taken from the ESS documentation .</p>
 
-Before we can begin with CFA and SEM, We first discuss the correlation present in the data.
+<p>Before we can begin with CFA and SEM, We first discuss the correlation present in the data. From the correlation plot , it can be seen that there are high levels of correlation between the
+variables related to trust in government. This will likely affect our model specification later on,
+when using the modificaiton indices to choose which indicators to remove and which residual covariances to add. Interestingly, political interest (polintr) is highly negatively correlated with one’s reported ability to actively participate in politics (actrolga) and one’s confidence to do so (cptppola). This insight
+will be important when we formulate the mediation model.</p>
 <div class="figure"><span style="display:block;" id="fig:exploratory"></span>
 <img src="structural-equation-politics_files/figure-html/exploratory-1.png" alt="Correlation between variables related to government trust, social trust, and poltical ability." width="672" />
 <p class="caption">

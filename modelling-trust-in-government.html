@@ -23,7 +23,6 @@
 <meta name="author" content="Max Savery" />
 
 
-<meta name="date" content="2022-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +30,7 @@
   
   
 <link rel="prev" href="introduction.html"/>
-<link rel="next" href="poltical-ability-and-trust.html"/>
+<link rel="next" href="political-ability-and-trust.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -76,7 +75,7 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Technical preface</a></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="modelling-trust-in-government.html"><a href="modelling-trust-in-government.html"><i class="fa fa-check"></i><b>3</b> Modelling trust in government</a></li>
-<li class="chapter" data-level="4" data-path="poltical-ability-and-trust.html"><a href="poltical-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Poltical ability and trust</a></li>
+<li class="chapter" data-level="4" data-path="political-ability-and-trust.html"><a href="political-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Political ability and trust</a></li>
 <li class="chapter" data-level="5" data-path="mediation-trust-poltical-interest-and-ability.html"><a href="mediation-trust-poltical-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: Trust, poltical interest, and ability</a></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
 <li class="divider"></li>
@@ -101,11 +100,19 @@
             <section class="normal" id="section-">
 <div id="modelling-trust-in-government" class="section level1 hasAnchor">
 <h1><span class="header-section-number">3</span> Modelling trust in government<a href="modelling-trust-in-government.html#modelling-trust-in-government" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-Here we investigate the CFA model for the latent factor trust in government.
+<p>Here we investigate a CFA model for the latent factor representing trust in government,
+in order to determine the measurement component our SEM model. We start with CFA
+for only the exogenous variables describing trust in government, because if
+we are not able to model these with a latent factor, the research question underlying this
+report will be a moot point.</p>
 We first fit a one-factor CFA model with variables
 
-Table  shows the standardized solution for the one-factor model. It can be seen that the standardized loadings are all greater than <span class="math inline">\(0.6\)</span>. In fact, all loadings for trust in government institutions are quite high, with only trust in the U.N. somewhat lower at <span class="math inline">\(0.66\)</span>. We then examine the modification indices in Table . Given the
-high value for the trstplt variable, we remove this variable, add covariances 
+Table  shows the standardized solution for the one-factor model.
+Note that this report will only present standardized solutions, for ease of interpretation of the
+factor loadings; however, standardized solutions are not always helpful
+if it is necessary to understand linear relationships in terms of their original scale.
+Nonetheless, it can be seen that the standardized loadings are all greater than <span class="math inline">\(0.6\)</span>. In fact, all loadings for trust in government institutions are quite high, with only trust in the U.N. somewhat lower at <span class="math inline">\(0.66\)</span>. We then examine the modification indices in Table . Given the
+high value for the trstplt variable, we remove this variable, and add covariances 
 and .
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -123,6 +130,9 @@ op
 rhs
 </th>
 <th style="text-align:right;">
+est.std
+</th>
+<th style="text-align:right;">
 se
 </th>
 <th style="text-align:right;">
@@ -130,9 +140,6 @@ z
 </th>
 <th style="text-align:right;">
 pvalue
-</th>
-<th style="text-align:right;">
-ci.lower
 </th>
 </tr>
 </thead>
@@ -148,6 +155,9 @@ gov_trust
 trstprl
 </td>
 <td style="text-align:right;">
+0.7935595
+</td>
+<td style="text-align:right;">
 0.0100107
 </td>
 <td style="text-align:right;">
@@ -155,9 +165,6 @@ trstprl
 </td>
 <td style="text-align:right;">
 0
-</td>
-<td style="text-align:right;">
-0.7739390
 </td>
 </tr>
 <tr>
@@ -169,6 +176,9 @@ gov_trust
 </td>
 <td style="text-align:left;">
 trstprt
+</td>
+<td style="text-align:right;">
+0.9210866
 </td>
 <td style="text-align:right;">
 0.0053530
@@ -179,9 +189,6 @@ trstprt
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;">
-0.9105950
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -192,6 +199,9 @@ gov_trust
 </td>
 <td style="text-align:left;">
 trstplt
+</td>
+<td style="text-align:right;">
+0.9120508
 </td>
 <td style="text-align:right;">
 0.0056435
@@ -202,9 +212,6 @@ trstplt
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;">
-0.9009897
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -215,6 +222,9 @@ gov_trust
 </td>
 <td style="text-align:left;">
 trstep
+</td>
+<td style="text-align:right;">
+0.8028929
 </td>
 <td style="text-align:right;">
 0.0096602
@@ -225,9 +235,6 @@ trstep
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;">
-0.7839592
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -240,6 +247,9 @@ gov_trust
 trstun
 </td>
 <td style="text-align:right;">
+0.6687113
+</td>
+<td style="text-align:right;">
 0.0143738
 </td>
 <td style="text-align:right;">
@@ -247,9 +257,6 @@ trstun
 </td>
 <td style="text-align:right;">
 0
-</td>
-<td style="text-align:right;">
-0.6405391
 </td>
 </tr>
 <tr>
@@ -261,6 +268,9 @@ trstprl
 </td>
 <td style="text-align:left;">
 trstprl
+</td>
+<td style="text-align:right;">
+0.3702633
 </td>
 <td style="text-align:right;">
 0.0158881
@@ -271,9 +281,6 @@ trstprl
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;">
-0.3391232
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -284,6 +291,9 @@ trstprt
 </td>
 <td style="text-align:left;">
 trstprt
+</td>
+<td style="text-align:right;">
+0.1515995
 </td>
 <td style="text-align:right;">
 0.0098611
@@ -294,9 +304,6 @@ trstprt
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;">
-0.1322720
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -307,6 +314,9 @@ trstplt
 </td>
 <td style="text-align:left;">
 trstplt
+</td>
+<td style="text-align:right;">
+0.1681633
 </td>
 <td style="text-align:right;">
 0.0102943
@@ -317,9 +327,6 @@ trstplt
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;">
-0.1479868
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -330,6 +337,9 @@ trstep
 </td>
 <td style="text-align:left;">
 trstep
+</td>
+<td style="text-align:right;">
+0.3553630
 </td>
 <td style="text-align:right;">
 0.0155122
@@ -340,9 +350,6 @@ trstep
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;">
-0.3249596
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -353,6 +360,9 @@ trstun
 </td>
 <td style="text-align:left;">
 trstun
+</td>
+<td style="text-align:right;">
+0.5528252
 </td>
 <td style="text-align:right;">
 0.0192239
@@ -363,9 +373,6 @@ trstun
 <td style="text-align:right;">
 0
 </td>
-<td style="text-align:right;">
-0.5151470
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -378,6 +385,9 @@ gov_trust
 gov_trust
 </td>
 <td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
 0.0000000
 </td>
 <td style="text-align:right;">
@@ -385,9 +395,6 @@ NA
 </td>
 <td style="text-align:right;">
 NA
-</td>
-<td style="text-align:right;">
-1.0000000
 </td>
 </tr>
 </tbody>
@@ -719,13 +726,13 @@ trstplt
 </tr>
 </tbody>
 </table>
-<p>We refit the model, for which the standardized solution
-for this new model is shown in Table . We then compare
-the two models in Table  and see that the modified model
-does in fact fit better.</p>
-Initially, it was not clear if the trust-related indicators could be represented
-with a latent factor. These results indicate that representing trust in government with a CFA model
-is possible and produces a reasonable model.
+We refit this modified model, for which the standardized solution
+is shown in Table . Table 
+compares the two models. It can be seen that the modified model
+does in fact fit better, across all fit measures. At the onset of this work,
+it was not clear if the indicators for government trust could be represented
+with a latent factor. These results indicate that representing trust in government with a measurement model
+is indeed possible and produces reasonable factor scores for each indicator on the latent variable.
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:one-fact-trust-adj">Table 3.3: </span>One-factor CFA for trust in government, allowing for residual covariances
@@ -742,6 +749,9 @@ op
 rhs
 </th>
 <th style="text-align:right;">
+est.std
+</th>
+<th style="text-align:right;">
 se
 </th>
 <th style="text-align:right;">
@@ -749,9 +759,6 @@ z
 </th>
 <th style="text-align:right;">
 pvalue
-</th>
-<th style="text-align:right;">
-ci.lower
 </th>
 </tr>
 </thead>
@@ -767,6 +774,9 @@ gov_trust
 trstprl
 </td>
 <td style="text-align:right;">
+0.8642252
+</td>
+<td style="text-align:right;">
 0.0123368
 </td>
 <td style="text-align:right;">
@@ -774,9 +784,6 @@ trstprl
 </td>
 <td style="text-align:right;">
 0.0000000
-</td>
-<td style="text-align:right;">
-0.8400455
 </td>
 </tr>
 <tr>
@@ -788,6 +795,9 @@ gov_trust
 </td>
 <td style="text-align:left;">
 trstprt
+</td>
+<td style="text-align:right;">
+0.8130745
 </td>
 <td style="text-align:right;">
 0.0130142
@@ -798,9 +808,6 @@ trstprt
 <td style="text-align:right;">
 0.0000000
 </td>
-<td style="text-align:right;">
-0.7875670
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -811,6 +818,9 @@ gov_trust
 </td>
 <td style="text-align:left;">
 trstep
+</td>
+<td style="text-align:right;">
+0.8796891
 </td>
 <td style="text-align:right;">
 0.0143219
@@ -821,9 +831,6 @@ trstep
 <td style="text-align:right;">
 0.0000000
 </td>
-<td style="text-align:right;">
-0.8516187
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -836,6 +843,9 @@ gov_trust
 trstun
 </td>
 <td style="text-align:right;">
+0.7072414
+</td>
+<td style="text-align:right;">
 0.0150077
 </td>
 <td style="text-align:right;">
@@ -843,9 +853,6 @@ trstun
 </td>
 <td style="text-align:right;">
 0.0000000
-</td>
-<td style="text-align:right;">
-0.6778268
 </td>
 </tr>
 <tr>
@@ -857,6 +864,9 @@ trstep
 </td>
 <td style="text-align:left;">
 trstun
+</td>
+<td style="text-align:right;">
+0.2788934
 </td>
 <td style="text-align:right;">
 0.0368622
@@ -867,9 +877,6 @@ trstun
 <td style="text-align:right;">
 0.0000000
 </td>
-<td style="text-align:right;">
-0.2066449
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -880,6 +887,9 @@ trstprl
 </td>
 <td style="text-align:left;">
 trstep
+</td>
+<td style="text-align:right;">
+-0.2523124
 </td>
 <td style="text-align:right;">
 0.0884789
@@ -890,9 +900,6 @@ trstep
 <td style="text-align:right;">
 0.0043491
 </td>
-<td style="text-align:right;">
--0.4257279
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -903,6 +910,9 @@ trstprl
 </td>
 <td style="text-align:left;">
 trstprl
+</td>
+<td style="text-align:right;">
+0.2531147
 </td>
 <td style="text-align:right;">
 0.0213236
@@ -913,9 +923,6 @@ trstprl
 <td style="text-align:right;">
 0.0000000
 </td>
-<td style="text-align:right;">
-0.2113212
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -926,6 +933,9 @@ trstprt
 </td>
 <td style="text-align:left;">
 trstprt
+</td>
+<td style="text-align:right;">
+0.3389099
 </td>
 <td style="text-align:right;">
 0.0211631
@@ -936,9 +946,6 @@ trstprt
 <td style="text-align:right;">
 0.0000000
 </td>
-<td style="text-align:right;">
-0.2974310
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -949,6 +956,9 @@ trstep
 </td>
 <td style="text-align:left;">
 trstep
+</td>
+<td style="text-align:right;">
+0.2261471
 </td>
 <td style="text-align:right;">
 0.0251976
@@ -959,9 +969,6 @@ trstep
 <td style="text-align:right;">
 0.0000000
 </td>
-<td style="text-align:right;">
-0.1767608
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -972,6 +979,9 @@ trstun
 </td>
 <td style="text-align:left;">
 trstun
+</td>
+<td style="text-align:right;">
+0.4998097
 </td>
 <td style="text-align:right;">
 0.0212281
@@ -982,9 +992,6 @@ trstun
 <td style="text-align:right;">
 0.0000000
 </td>
-<td style="text-align:right;">
-0.4582033
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -997,6 +1004,9 @@ gov_trust
 gov_trust
 </td>
 <td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
 0.0000000
 </td>
 <td style="text-align:right;">
@@ -1004,9 +1014,6 @@ NA
 </td>
 <td style="text-align:right;">
 NA
-</td>
-<td style="text-align:right;">
-1.0000000
 </td>
 </tr>
 </tbody>
@@ -1137,7 +1144,7 @@ rmsea
         </div>
       </div>
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="poltical-ability-and-trust.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="political-ability-and-trust.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,18 +1,25 @@
 # Data from
 # https://www.europeansocialsurvey.org/downloadwizard/
 
-library("dplyr")      
+library("dplyr")
 #library("psych")
 #library('stringr')
-library("lavaan")       
-library("corrplot")     
+library("lavaan")
+library("corrplot")
 library("tidySEM")
 library("kableExtra")
 
+#data_file <- "ESS1-9e01_1/ESS1-9e01_1_all_dates.csv"
+##user_dir <- "d:/asus_documents/ku_leuven/courses/structural_equations/project/"
+#df <- read.csv(paste(user_dir, data_file, sep=""))
+#df <- read.csv(data_file, sep="")
+#df <- read.csv(data_file, sep=",")
+#View(df)
+
 # Load data into global env
-user_dir <- "d:/asus_documents/ku_leuven/courses/structural_equations/project/"
-source(paste(user_dir, "sem_utils.R", sep=""))
-source(paste(user_dir, "sem_functions.R", sep=""))
+source("sem_utils.R")
+source("sem_functions.R")
+df_subset <- data_processing(df)
 exploratory_plots(df_subset)
 fit_trust <- fit_trust_model(df_subset)
 caption <- "One-factor CFA for trust in government"
@@ -52,7 +59,7 @@ fit_adj_1 <- fit_improved_politics_model(df_subset)
 caption <- paste("Modified three-factor model for trust in government, trust in people, and political ability. Residual covariances are added and trstplt is removed.")
 label <- paste("three-fact-mod-1")
 print_fit(fit_adj_1, caption, label)
-caption <- paste("After the first set of model changes, we consider again the modification 
+caption <- paste("After the first set of model changes, we consider again the modification
                      indices for the three-factor model. Top 10 are shown.")
 label <- paste("three-fact-mi-2")
 print_mi(fit_adj_1, caption, label)
@@ -68,7 +75,7 @@ graph_model(fit_adj_2)
 
 # Then run mediation
 fit_med <- fit_mediation_model(df_subset)
-caption <- "Three-factor medidation model, considering structural relationship 
+caption <- "Three-factor medidation model, considering structural relationship
     between trust in people and trust in government"
 label <- "three-fact-mediation"
 print_fit(fit_med, caption, label)

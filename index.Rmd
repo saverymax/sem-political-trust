@@ -26,7 +26,8 @@ install.packages("bookdown")
 bookdown::render_book('index.Rmd', 'bookdown::pdf_book')
 ```
 That being said, given the time constraints of the semester and finishing my master's thesis, the bookdown report isn't perfect. But having a more-or-less well-documented and reproducible project
-is better than not having one at all.
+is better than not having one at all. I heavily relied on <https://github.com/rstudio/bookdown-demo> 
+for setting it up.
 ```{r libs, include=FALSE}
 library("dplyr")    
 library("lavaan")    

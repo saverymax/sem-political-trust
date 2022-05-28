@@ -1,11 +1,16 @@
-# Mediation: Trust, poltical interest, and ability
+# Mediation: political interest and ability
 ```{r load-4, include=FALSE}
 df_subset <- data_processing(df)
 ```
-
-Here we model the influence of political interest on political ability, including the
-indirect effect of political interest through government trust. We also consider the influence of 
+Having developed a reliable measurement model for our constructs, we are now 
+prepared to specify the structural part of our model.
+Specifically, we consider a mediation model to explore the influence of political interest on political ability.
+We include the indirect effect of political interest through government trust. We also consider the influence of 
 trust in people on government trust.
+
+what is the effect of political interest and trust in government 
+on how people conceive of their ability to participate in politics?
+Furthermore, is there a relationship between government trust and social trust?
 
 The mediation model is written as 
 \begin{verbatim}
@@ -13,31 +18,44 @@ The mediation model is written as
     gov_trust =~ trstprl + trstprt + trstep + trstun
     # Trust in people
     people_trust =~ ppltrst + pplfair + pplhlp 
-    # Poltical ability
-    poltical_able =~ psppipla + psppsgva + cptppola
+    # political ability
+    political_able =~ psppipla + actrolga + psppsgva + cptppola
+    # Add residual covariance
+    actrolga ~~ cptppola
+    trstep ~~ trstun
     # Add residual covariance
     trstep ~~ trstun
     trstprl ~~ trstep
-    # Direct effect(s)
-    poltical_able ~ c1*polintr
+    # Direct effect
+    political_able ~ c1*polintr
     # Mediator
     # Path A
-    gov_trust ~ a1\*people_trust + a2\*polintr
+    gov_trust ~ a1*people_trust + a2*polintr
     # Path B
-    poltical_able ~ b1*gov_trust
+    political_able ~ b1*gov_trust
     # Indirect effect
     ab_trust := a1*b1
     ab_interest := a2*b1
     # Total effect
     total_interest := c1 + ab_interest
+    total_trust := c1 + ab_trust
 \end{verbatim}
 
 ```{r mediation, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 library("lavaan")
 fit_med <- fit_mediation_model(df_subset)
-caption <- "Three-factor medidation model, considering structural relationship 
+caption <- "3-factor medidation model, considering structural relationship 
     between trust in people and trust in government"
 label <- "three-fact-mediation"
 print_fit(fit_med, caption, label)
 ```
 Table \ref{tab:three-fact-mediation} shows the estimates for the mediation model.
+We can see that the term \verb+ab\_interest := a2*b1+ is significant. Therefore, government trust
+mediates between political interest and one's described ability to participate in 
+the political system. Additionally, the total effect, \verb+total_interest+,  is significant, 
+The model can be visualized below.
+```{r graph-mediation, results='asis', echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Mediation model graph structure"}
+graph_mediation(fit_med)
+```
+
+

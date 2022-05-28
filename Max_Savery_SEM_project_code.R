@@ -2,8 +2,6 @@
 # https://www.europeansocialsurvey.org/downloadwizard/
 
 library("dplyr")
-#library("psych")
-#library('stringr')
 library("lavaan")
 library("corrplot")
 library("tidySEM")
@@ -36,7 +34,7 @@ label <- paste("one-fact-trust-adj")
 print_fit(fit_trust_adj, caption, label)
 compare_one_factor(fit_trust, fit_trust_adj)
 
-# Add in poltical variables and trust in people
+# Add in political variables and trust in people
 fit_politics <- fit_politics_model(df_subset)
 caption <- "Three-factor model for trust in government, trust in people, and political ability"
 label <- "three-fact-poli"
@@ -79,3 +77,4 @@ caption <- "Three-factor medidation model, considering structural relationship
     between trust in people and trust in government"
 label <- "three-fact-mediation"
 print_fit(fit_med, caption, label)
+graph_mediation(fit_med)

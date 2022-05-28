@@ -17,7 +17,12 @@ exploratory_plots <- function(df_subset){
 
 print_fit <- function(fit, caption, label){
     fit_print <- standardizedsolution(fit)
-    print(kbl(fit_print[,c(1:3, 4:7)], booktabs = T, escape=T, caption=caption, label=label, linesep = "") %>%
+    if (label=="three-fact-mediation"){
+      indices <- c(1:3, 4:8)
+    }else{
+      indices <- c(1:3, 4:7)
+    }
+    print(kbl(fit_print[,indices], booktabs = T, escape=T, caption=caption, label=label, linesep = "") %>%
               kable_styling(latex_options = "HOLD_position"))
 }
 
@@ -25,7 +30,7 @@ print_mi <- function(fit, caption, label){
     # Get modification indices
     mi<-inspect(fit, "mi")
     mi.sorted<-mi[order(-mi$mi), ]
-    print(kbl(mi.sorted[1:10,], booktabs = T, escape=T, caption=caption, label=label, linesep = "") %>%
+    print(kbl(mi.sorted[1:10,1:4], booktabs = T, escape=T, caption=caption, label=label, linesep = "") %>%
               kable_styling(latex_options = "HOLD_position"))
 }
 
@@ -49,7 +54,6 @@ fit_trust_model_adj <- function(df_subset){
         # Trust in government
         gov_trust =~ trstprl + trstprt + trstep + trstun
         trstep ~~ trstun
-        trstprl ~~ trstep
     '
     fit_trust_adj <- cfa(trust_model_adj,
                           data = df_subset)
@@ -78,8 +82,8 @@ fit_politics_model <- function(df_subset){
         gov_trust =~ trstprl + trstprt + trstplt  + trstep + trstun
         # Trust in people
         people_trust =~ ppltrst + pplfair + pplhlp
-        # Poltical ability
-        poltical_able =~ psppipla + actrolga + psppsgva + cptppola
+        # political ability
+        political_able =~ psppipla + actrolga + psppsgva + cptppola
     '
 
     fit_politics <- cfa(politics_model,
@@ -97,9 +101,9 @@ fit_politics_collapsed <- function(df_subset){
     model_collapsed <- '
         # Specify latent factors
         # Trust
-        gov_trust =~ trstprl + trstprt + trstplt + trstep + trstun + ppltrst + pplfair + pplhlp
-        # Poltical ability
-        poltical_able =~ psppipla + actrolga + psppsgva + cptppola
+        trust =~ trstprl + trstprt + trstplt + trstep + trstun + ppltrst + pplfair + pplhlp
+        # political ability
+        political_able =~ psppipla + actrolga + psppsgva + cptppola
         # Add residual covariance
     '
     fit_collapsed <- cfa(model_collapsed,
@@ -137,12 +141,11 @@ fit_improved_politics_model <- function(df_subset){
         gov_trust =~ trstprl + trstprt + trstep + trstun
         # Trust in people
         people_trust =~ ppltrst + pplfair + pplhlp
-        # Poltical ability
-        poltical_able =~ psppipla + actrolga + psppsgva + cptppola
+        # political ability
+        political_able =~ psppipla + actrolga + psppsgva + cptppola
         # Add residual covariance
-        trstep ~~ trstun
-        trstprl ~~ trstep
         actrolga ~~ cptppola
+        trstep ~~ trstun
     '
 
     fit_politics_adj_1 <- cfa(politics_model_adj_1,
@@ -153,18 +156,17 @@ fit_improved_politics_model <- function(df_subset){
 }
 
 fit_improved_politics_model_2 <- function(df_subset){
-    # Let's remove actrolga
     politics_model_adj_2 <- '
-        # Specify latent factors
         # Trust in government
         gov_trust =~ trstprl + trstprt + trstep + trstun
         # Trust in people
-        people_trust =~ ppltrst + pplfair + pplhlp
-        # Poltical ability
-        poltical_able =~ psppipla + psppsgva + cptppola
+        people_trust =~ ppltrst + pplfair + pplhlp + trstep
+        # political ability
+        political_able =~ psppipla + actrolga + psppsgva + cptppola
         # Add residual covariance
+        actrolga ~~ cptppola
         trstep ~~ trstun
-        trstprl ~~ trstep
+        trstprt ~~ trstep
     '
 
     fit_politics_adj_2 <- cfa(politics_model_adj_2,
@@ -172,10 +174,12 @@ fit_improved_politics_model_2 <- function(df_subset){
     return(fit_politics_adj_2)
 }
 
-compare_poli_adj <- function(fit_politics_adj_1, fit_politics_adj_2){
+compare_poli_adj <- function(fit_politics, fit_politics_adj_1, fit_politics_adj_2){
+    m0=fitMeasures(fit_politics, c("logl","AIC", "BIC", "chisq", "df", "pvalue", "cfi", "tli","rmsea", "srmr"), output = "matrix")
     m1=fitMeasures(fit_politics_adj_1, c("logl","AIC", "BIC", "chisq", "df", "pvalue", "cfi", "tli","rmsea", "srmr"), output = "matrix")
     m2=fitMeasures(fit_politics_adj_2, c("logl","AIC", "BIC", "chisq", "df", "pvalue", "cfi", "tli","rmsea", "srmr"), output = "matrix")
-    df_compare <- data.frame(Fit=rownames(m1), "model with actrolga"=round(m1[,1],3), "model w/o actrolga"=round(m2[,1],3))
+    df_compare <- data.frame("fit1"=round(m0[,1],3), "fit2"=round(m1[,1],3), "fit3"=round(m2[,1],3))
+    names(df_compare) <- c("Original fit", "First modified fit", "Second modified fit")
     # Well that doesn't make much difference.
     caption <- paste("Comparison of modified 3-factor CFA models")
     label <- paste("mod-three-fact-compare")
@@ -198,38 +202,54 @@ graph_model <- function(fit){
 fit_mediation_model <- function(df_subset){
     # So then add in mediation model.
     politics_mediation_model <- '
-        # Specify latent factors
         # Trust in government
         gov_trust =~ trstprl + trstprt + trstep + trstun
         # Trust in people
         people_trust =~ ppltrst + pplfair + pplhlp
-        # Poltical ability
-        poltical_able =~ psppipla + psppsgva + cptppola
+        # political ability
+        political_able =~ psppipla + actrolga + psppsgva + cptppola
         # Add residual covariance
+        actrolga ~~ cptppola
         trstep ~~ trstun
-        trstprl ~~ trstep
 
         ## Direct effect(s) ##
-        poltical_able ~ c1*polintr
+        political_able ~ c1*polintr
 
         ## Mediator ##
         ## Path A
         gov_trust ~ a1*people_trust + a2*polintr
         ## Path B
-        poltical_able ~ b1*gov_trust
+        political_able ~ b1*gov_trust
         ## Indirect effect (a*b) ##
         ab_trust := a1*b1
         ab_interest := a2*b1
         ## Total effect ##
         total_interest := c1 + ab_interest
+        total_trust := c1 + ab_trust
     '
     fit_mediation <- cfa(politics_mediation_model,
                           data = df_subset)
     # Well this is sort of an interesting idea, see drawing in notebook.
     # It says that there is an influential effect of people_trust on gov_trust
     # and that there is a significant effect of political interest on political_able
-    # There is also a mediation effect from polintr -> gov_trust -> poltical_able
+    # There is also a mediation effect from polintr -> gov_trust -> political_able
     return(fit_mediation)
+}
+
+graph_mediation <- function(fit){
+  lay <- get_layout(
+    "ppltrst", "pplfair", "pplhlp", "", "", "",
+    "people_trust", "", "trstprl", "trstprt", "trstep", "trstun",
+    "", "polintr", "", "gov_trust", "", "",
+    "", "", "political_able", "", "", "",
+    "", "psppipla",  "actrolga", "psppsgva", "cptppola", "",
+    rows = 5)
+  p <- graph_sem(model = fit,
+          layout = lay,
+          angle = 170
+          #label = "est_std"
+  )
+  p
 }
 
 # Not including this in analysis
@@ -241,11 +261,11 @@ fit_multigroup_model <- function(df_subset){
         gov_trust =~ trstprl + trstprt + trstep + trstun
         # Trust in people
         people_trust =~ ppltrst + pplfair + pplhlp
-        # Poltical ability
-        poltical_able =~ psppipla + psppsgva + cptppola
+        # political ability
+        political_able =~ psppipla + psppsgva + cptppola
         # Add residual covariance
+        actrolga ~~ cptppola
         trstep ~~ trstun
-        trstprl ~~ trstep
     '
     # fit multigroup model.
     df_subset$gndr <- factor(df_subset$gndr,

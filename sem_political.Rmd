@@ -2,60 +2,66 @@
 ```{r load-3, include=FALSE}
 df_subset <- data_processing(df)
 ```
-We next model the relationship between perceived political ability, personal trust
-of people, and government trust. We consider political ability, trust in others, and trust
-in government to be the three factors in our CFA model. The fit of the model is shown in Table \ref{tab:three-fact-poli}
+We next specify the measurement model for perceived political ability, social trust, 
+and government trust. We consider political ability, trust in others, and trust
+in government to be the three factors in our CFA model. The fit of the model is shown in Table \ref{tab:three-fact-poli}.
+It can be seen that all indicators have relatively high loadings on their respective latent factors, 
+the lowest of which being actrolga with a loading of 0.5226, thereby indicating that the latent factors
+of this measurement model are adequately accounting for the correlation in the data.
 \begin{verbatim}
     # Trust in government
     gov_trust =~ trstprl + trstprt + trstplt  + trstep + trstun
     # Trust in people
     people_trust =~ ppltrst + pplfair + pplhlp 
-    # Poltical ability
-    poltical_able =~ psppipla + actrolga + psppsgva + cptppola
+    # Political ability
+    political_able =~ psppipla + actrolga + psppsgva + cptppola
 \end{verbatim}
 ```{r political, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 library("lavaan")
 library("dplyr")
 fit_politics <- fit_politics_model(df_subset)
-caption <- "Three-factor model for trust in government, trust in people, and political ability"
+caption <- "3-factor model for trust in government, trust in people, and political ability"
 label <- "three-fact-poli"
 print_fit(fit_politics, caption, label)
 ```
 Considering that perhaps trust (government and social) could be represented
-by a single factor, We compare the three-factor model to a collapsed
-two-factor model. The fit of the two-factor model is shown in Table \ref{tab:two-fact-poli}.
+by a single factor, we compare the 3-factor model to a collapsed
+2-factor model. The fit of the 2-factor model is shown in Table \ref{tab:two-fact-poli}.
+Right away, it appears that the 2-factor model is not correctly handling the correlation 
+in the data, because the loadings for the indicators relating to social trust have 
+relatively low loadings on the trust construct. 
 \begin{verbatim}
     # Trust 
-    gov_trust =~ trstprl + trstprt + trstplt + trstep + trstun + ppltrst + pplfair + pplhlp 
-    # Poltical ability
-    poltical_able =~ psppipla + actrolga + psppsgva + cptppola
+    trust =~ trstprl + trstprt + trstplt + trstep + trstun + ppltrst + pplfair + pplhlp 
+    # Political ability
+    political_able =~ psppipla + actrolga + psppsgva + cptppola
 \end{verbatim}
 
-As these are nested models, we can test the difference between them with a likelihood ratio test, shown in Table \ref{tab:collapse-compare}. The models are significantly different, indicating that the two-factor model is not sufficient to represent the latent structure.
+As these are nested models \citep{Brown-2006}\footnote{\citet{Brown-2006} states that while these can be considered nested models, there is some disagreement about the extent to which models with different numbers of latent factors are indeed nested.}, we can test the difference between them with a $\chi^2$ difference test, shown in Table \ref{tab:collapse-compare}. The models are significantly different, indicating that the 3-factor model significantly improves the fit.
 ```{r political-collapse, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 fit_coll <- fit_politics_collapsed(df_subset)
 caption <- "Collapsed model, where trust becomes 1 factor"
 label <- "two-fact-poli"
 print_fit(fit_coll, caption, label)
 ```
-
-We then compare the fit measures between the two models, shown in Table \ref{tab:three-fact-compare}
-It can be seen that the three-factor model has a better goodness-of-fit.
 ```{r poli-compare, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 compare_poli(fit_politics, fit_coll)
-caption <- "Modification indices for three-factor model. Top 10 are shown."
+caption <- "Modification indices for i model. Top 10 are shown."
 label <- "three-fact-mi"
 print_mi(fit_politics, caption, label)
 ```
-We next consider how we can improve the three-factor model. The modification 
+We then compare the fit measures between the two models, shown in Table \ref{tab:three-fact-compare}.
+It can be seen that the 3-factor model has a better goodness-of-fit. However,
+the fit is not completely satisfactory, as the TFI and CLI are low while the RMSEA is somewhat
+high. Therefore, we proceed to improve the 3-factor model. The modification 
 indices for this model are shown in Table \ref{tab:three-fact-mi}. 
-Following the perturbations with the highes modification indices, 
-we attempt to improve the fit by removing the variable trstplt. We also 
+Following the bread crumbs left by the perturbations with the highest modification indices, 
+we attempt to improve the fit by removing the variable trstplt. This was already done
+once, when fitting the one-factor model, with good results. We also 
 add the residual covariances 
 \begin{itemize}
-    \item \verb+trstep ~~ trstun+
-    \item \verb+trstprl ~~ trstep+
     \item \verb+actrolga ~~ cptppola+
+    \item \verb+trstep ~~ trstun+
 \end{itemize}
 so that the model becomes
 \begin{verbatim}
@@ -63,40 +69,52 @@ so that the model becomes
     gov_trust =~ trstprl + trstprt + trstep + trstun
     # Trust in people
     people_trust =~ ppltrst + pplfair + pplhlp 
-    # Poltical ability
-    poltical_able =~ psppipla + actrolga + psppsgva + cptppola
+    # Political ability
+    political_able =~ psppipla + actrolga + psppsgva + cptppola
     # Add residual covariance
-    trstep ~~ trstun
-    trstprl ~~ trstep
     actrolga ~~ cptppola
+    trstep ~~ trstun
 \end{verbatim}
 
 The estimates for this model can be seen in Table \ref{tab:three-fact-mod-1}.
 
 ```{r improved-political, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 fit_adj_1 <- fit_improved_politics_model(df_subset)
-caption <- paste("Modified three-factor model for trust in government, trust in people, and political ability. Residual covariances are added and trstplt is removed.")
+caption <- paste("Modified 3-factor model for trust in government, trust in people, and political ability. Residual covariances are added and trstplt is removed.")
 label <- paste("three-fact-mod-1")
 print_fit(fit_adj_1, caption, label)
 caption <- paste("After the first set of model changes, we consider again the modification 
-                     indices for the three-factor model. Top 10 are shown.")
+                     indices for the 3-factor model. Top 10 are shown.")
 label <- paste("three-fact-mi-2")
 print_mi(fit_adj_1, caption, label)
 ```
 We then reconsider the modification indices, in Table \ref{tab:three-fact-mi-2}.
-From this, we remove the indicator \verb+actrolga+ and the associated residual
-covariance \verb+actrolga ~~ cptppola+. We again refit the model, and show the estimates
-in Table \ref{tab:three-fact-mod-2}. The fit measures of the two modified models are 
-shown in Table \ref{tab:mod-three-fact-compare}. However, the second set of modifications
-appears to make little difference.
+From this, we add the indicator trstep into the regression relationship with social trust
+and add the residual covariance \verb+trstprt ~~ trstep+. 
+The cross-loading of trstep onto social trust is interesting because there certainly 
+could be a directional relationship between the extent to which people trust in institutions such 
+as the European Union and the extent to which they trust in others.
+We again refit the model, and show the estimates in Table \ref{tab:three-fact-mod-2}. 
+It can be seen that the cross-loading for trstep on the social trust latent factor is small and negative.
+We take this to mean that while there is an interesting relationship between trust in the
+European parliament and social trust, it is not correctly represented in the specification
+of the measurement model here, and potentially could be part of a structural relationship.
+
+The fit measures of the original 3-factor model and the two modified models are shown in Table \ref{tab:mod-three-fact-compare}. 
+While both modified models provide a much better fit than the original, 
+the second set of modifications appears to make only a marginal difference.
+Given the small negative loading of trstep on social trust, we proceed with the model 
+with only the first set of modifications. This model will be used in our mediation analysis.
 ```{r improved-political-2, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 fit_adj_2 <- fit_improved_politics_model_2(df_subset)
-caption <- paste("Modified three-factor model for trust in government, trust in people, and political ability. Variable actrolga is removed, as well as its associated covariance.")
+caption <- paste("Modified 3-factor model for trust in government, trust in people, and political ability. 
+                 cross-loading for trstep is added, as well as new residual covariance")
 label <- paste("three-fact-mod-2")
 print_fit(fit_adj_2, caption, label)
-compare_poli_adj(fit_adj_1, fit_adj_2)
+# Compare all 3 models
+compare_poli_adj(fit_politics, fit_adj_1, fit_adj_2)
 ```
 The model can be visualized below.
 ```{r graph-model, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-graph_model(fit_adj_2)
+graph_model(fit_adj_1)
 ```

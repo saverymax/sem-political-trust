@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Mediation: Trust, poltical interest, and ability | Structural Equation Modelling of Political Trust and Ability</title>
+  <meta name="description" content="Bookdown for structural equations project" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Mediation: Trust, poltical interest, and ability | Structural Equation Modelling of Political Trust and Ability" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Bookdown for structural equations project" />
+  <meta name="github-repo" content="saverymax/sem-political-trust" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Mediation: Trust, poltical interest, and ability | Structural Equation Modelling of Political Trust and Ability" />
+  
+  <meta name="twitter:description" content="Bookdown for structural equations project" />
+  
+
+<meta name="author" content="Max Savery" />
+
+
+<meta name="date" content="2022-05-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="poltical-ability-and-trust.html"/>
+<link rel="next" href="discussion.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SEM for perceived political ability and trust </a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Technical preface</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="modelling-trust-in-government.html"><a href="modelling-trust-in-government.html"><i class="fa fa-check"></i><b>3</b> Modelling trust in government</a></li>
+<li class="chapter" data-level="4" data-path="poltical-ability-and-trust.html"><a href="poltical-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Poltical ability and trust</a></li>
+<li class="chapter" data-level="5" data-path="mediation-trust-poltical-interest-and-ability.html"><a href="mediation-trust-poltical-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: Trust, poltical interest, and ability</a></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/saverymax/sem-political-trust" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Structural Equation Modelling of Political Trust and Ability</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mediation-trust-poltical-interest-and-ability" class="section level1 hasAnchor">
+<h1><span class="header-section-number">5</span> Mediation: Trust, poltical interest, and ability<a href="mediation-trust-poltical-interest-and-ability.html#mediation-trust-poltical-interest-and-ability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Here we model the influence of political interest on political ability, including the
+indirect effect of political interest through government trust. We also consider the influence of
+trust in people on government trust.</p>
+The mediation model is written as
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:three-fact-mediation">Table 5.1: </span>Three-factor medidation model, considering structural relationship
+between trust in people and trust in government
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+lhs
+</th>
+<th style="text-align:left;">
+op
+</th>
+<th style="text-align:left;">
+rhs
+</th>
+<th style="text-align:right;">
+est.std
+</th>
+<th style="text-align:right;">
+se
+</th>
+<th style="text-align:right;">
+z
+</th>
+<th style="text-align:right;">
+pvalue
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+trstprl
+</td>
+<td style="text-align:right;">
+0.8575935
+</td>
+<td style="text-align:right;">
+0.0111174
+</td>
+<td style="text-align:right;">
+77.139725
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+trstprt
+</td>
+<td style="text-align:right;">
+0.8288318
+</td>
+<td style="text-align:right;">
+0.0113644
+</td>
+<td style="text-align:right;">
+72.932008
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+trstep
+</td>
+<td style="text-align:right;">
+0.8350702
+</td>
+<td style="text-align:right;">
+0.0128395
+</td>
+<td style="text-align:right;">
+65.039260
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+trstun
+</td>
+<td style="text-align:right;">
+0.6975900
+</td>
+<td style="text-align:right;">
+0.0149520
+</td>
+<td style="text-align:right;">
+46.655358
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+people_trust
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+ppltrst
+</td>
+<td style="text-align:right;">
+0.7583931
+</td>
+<td style="text-align:right;">
+0.0197297
+</td>
+<td style="text-align:right;">
+38.439104
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+people_trust
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+pplfair
+</td>
+<td style="text-align:right;">
+0.6619311
+</td>
+<td style="text-align:right;">
+0.0204244
+</td>
+<td style="text-align:right;">
+32.408783
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+people_trust
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+pplhlp
+</td>
+<td style="text-align:right;">
+0.5984337
+</td>
+<td style="text-align:right;">
+0.0212032
+</td>
+<td style="text-align:right;">
+28.223772
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+poltical_able
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+psppipla
+</td>
+<td style="text-align:right;">
+0.7981589
+</td>
+<td style="text-align:right;">
+0.0204590
+</td>
+<td style="text-align:right;">
+39.012634
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+poltical_able
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+psppsgva
+</td>
+<td style="text-align:right;">
+0.6616023
+</td>
+<td style="text-align:right;">
+0.0208925
+</td>
+<td style="text-align:right;">
+31.666995
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+poltical_able
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+cptppola
+</td>
+<td style="text-align:right;">
+0.4469465
+</td>
+<td style="text-align:right;">
+0.0238328
+</td>
+<td style="text-align:right;">
+18.753417
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trstep
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+trstun
+</td>
+<td style="text-align:right;">
+0.3279327
+</td>
+<td style="text-align:right;">
+0.0292544
+</td>
+<td style="text-align:right;">
+11.209700
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trstprl
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+trstep
+</td>
+<td style="text-align:right;">
+-0.0855858
+</td>
+<td style="text-align:right;">
+0.0516492
+</td>
+<td style="text-align:right;">
+-1.657060
+</td>
+<td style="text-align:right;">
+0.0975074
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+poltical_able
+</td>
+<td style="text-align:left;">
+~
+</td>
+<td style="text-align:left;">
+polintr
+</td>
+<td style="text-align:right;">
+-0.2490213
+</td>
+<td style="text-align:right;">
+0.0253235
+</td>
+<td style="text-align:right;">
+-9.833610
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:left;">
+~
+</td>
+<td style="text-align:left;">
+people_trust
+</td>
+<td style="text-align:right;">
+0.4512955
+</td>
+<td style="text-align:right;">
+0.0253129
+</td>
+<td style="text-align:right;">
+17.828660
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:left;">
+~
+</td>
+<td style="text-align:left;">
+polintr
+</td>
+<td style="text-align:right;">
+-0.1776192
+</td>
+<td style="text-align:right;">
+0.0232438
+</td>
+<td style="text-align:right;">
+-7.641556
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+poltical_able
+</td>
+<td style="text-align:left;">
+~
+</td>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:right;">
+0.4229440
+</td>
+<td style="text-align:right;">
+0.0258140
+</td>
+<td style="text-align:right;">
+16.384307
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trstprl
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+trstprl
+</td>
+<td style="text-align:right;">
+0.2645334
+</td>
+<td style="text-align:right;">
+0.0190684
+</td>
+<td style="text-align:right;">
+13.872847
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trstprt
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+trstprt
+</td>
+<td style="text-align:right;">
+0.3130379
+</td>
+<td style="text-align:right;">
+0.0188384
+</td>
+<td style="text-align:right;">
+16.616988
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trstep
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+trstep
+</td>
+<td style="text-align:right;">
+0.3026578
+</td>
+<td style="text-align:right;">
+0.0214437
+</td>
+<td style="text-align:right;">
+14.114045
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trstun
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+trstun
+</td>
+<td style="text-align:right;">
+0.5133683
+</td>
+<td style="text-align:right;">
+0.0208607
+</td>
+<td style="text-align:right;">
+24.609348
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ppltrst
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+ppltrst
+</td>
+<td style="text-align:right;">
+0.4248400
+</td>
+<td style="text-align:right;">
+0.0299258
+</td>
+<td style="text-align:right;">
+14.196455
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pplfair
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+pplfair
+</td>
+<td style="text-align:right;">
+0.5618472
+</td>
+<td style="text-align:right;">
+0.0270391
+</td>
+<td style="text-align:right;">
+20.779034
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pplhlp
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+pplhlp
+</td>
+<td style="text-align:right;">
+0.6418771
+</td>
+<td style="text-align:right;">
+0.0253774
+</td>
+<td style="text-align:right;">
+25.293261
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+psppipla
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+psppipla
+</td>
+<td style="text-align:right;">
+0.3629423
+</td>
+<td style="text-align:right;">
+0.0326590
+</td>
+<td style="text-align:right;">
+11.113071
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+psppsgva
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+psppsgva
+</td>
+<td style="text-align:right;">
+0.5622824
+</td>
+<td style="text-align:right;">
+0.0276450
+</td>
+<td style="text-align:right;">
+20.339361
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cptppola
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+cptppola
+</td>
+<td style="text-align:right;">
+0.8002388
+</td>
+<td style="text-align:right;">
+0.0213040
+</td>
+<td style="text-align:right;">
+37.562891
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+gov_trust
+</td>
+<td style="text-align:right;">
+0.7647838
+</td>
+<td style="text-align:right;">
+0.0234684
+</td>
+<td style="text-align:right;">
+32.587810
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+people_trust
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+people_trust
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+poltical_able
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+poltical_able
+</td>
+<td style="text-align:right;">
+0.7216923
+</td>
+<td style="text-align:right;">
+0.0245780
+</td>
+<td style="text-align:right;">
+29.363287
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+polintr
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+polintr
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ab_trust
+</td>
+<td style="text-align:left;">
+:=
+</td>
+<td style="text-align:left;">
+a1*b1
+</td>
+<td style="text-align:right;">
+0.1908727
+</td>
+<td style="text-align:right;">
+0.0162711
+</td>
+<td style="text-align:right;">
+11.730782
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ab_interest
+</td>
+<td style="text-align:left;">
+:=
+</td>
+<td style="text-align:left;">
+a2*b1
+</td>
+<td style="text-align:right;">
+-0.0751230
+</td>
+<td style="text-align:right;">
+0.0108335
+</td>
+<td style="text-align:right;">
+-6.934349
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+total_interest
+</td>
+<td style="text-align:left;">
+:=
+</td>
+<td style="text-align:left;">
+c1+ab_interest
+</td>
+<td style="text-align:right;">
+-0.3241443
+</td>
+<td style="text-align:right;">
+0.0253777
+</td>
+<td style="text-align:right;">
+-12.772795
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+</tbody>
+</table>
+<p>Table  shows the estimates for the mediation model.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="poltical-ability-and-trust.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/saverymax/sem-political-trust/edit/main/sem_mediation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["structural-equation-politics.pdf", "structural-equation-politics.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

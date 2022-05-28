@@ -1,4 +1,7 @@
 # Modelling trust in government
+```{r load-2, include=FALSE}
+df_subset <- data_processing(df)
+```
 
 Here we investigate the CFA model for the latent factor trust in government.
 We first fit a one-factor CFA model with variables 

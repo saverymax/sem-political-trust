@@ -1,4 +1,11 @@
 # Introduction
+```{r load-1, include=FALSE}
+#data_file <- "ESS1-9e01_1/ESS1-9e01_1_all_dates.csv"
+#user_dir <- "d:/asus_documents/ku_leuven/courses/structural_equations/project/"
+#df <- read.csv(paste(user_dir, data_file, sep=""))
+#df <- readr::read_csv(data_file)
+df_subset <- data_processing(df)
+```
 
 We introduce the topic of this report: We conduct structural equations modelling
 on European Social Survey data, in order to 
@@ -42,8 +49,6 @@ on trust in government. The variables used in the analysis are shown in Table \r
 \end{table}
 
 Before we can begin with CFA and SEM, We first discuss the correlation present in the data.
-
 ```{r exploratory, results='hide', echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Correlation between variables related to government trust, social trust, and poltical ability."}
-library("corrplot")     
 exploratory_plots(df_subset)
 ```

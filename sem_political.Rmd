@@ -1,5 +1,7 @@
 # Poltical ability and trust
-
+```{r load-3, include=FALSE}
+df_subset <- data_processing(df)
+```
 We next model the relationship between perceived political ability, personal trust
 of people, and government trust. We consider political ability, trust in others, and trust
 in government to be the three factors in our CFA model. The fit of the model is shown in Table \ref{tab:three-fact-poli}

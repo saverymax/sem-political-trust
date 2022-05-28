@@ -6,7 +6,7 @@ site: bookdown::bookdown_site
 documentclass: article
 output: bookdown::gitbook
 geometry: margin=1in
-bibliography: [sem.bib,packages.bib]
+bibliography: [sem.bib, packages.bib]
 link-citations: yes
 github-repo: saverymax/sem-political-trust
 description: "Bookdown for structural equations project"
@@ -20,19 +20,18 @@ reproducible computational science.
 The code for this report can be found at https://github.com/saverymax/sem-political-trust.
 To render the book, run bookdown::render_book('index.Rmd', 'bookdown::pdf_book'). 
 That being said, given the time constraints of the semester and finishing my master's thesis, the bookdown report isn't perfect.
-
+, "sem_exploratory.Rmd", "sem_trust.Rmd", "sem_political.Rmd",
+    "sem_mediation.Rmd", "conclusion.Rmd"
 It may also need to do setwd("d:/asus_documents/ku_leuven/courses/structural_equations/project/bookdown")
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
+knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
 ```
 
 ```{r libs, include=FALSE}
-library("dplyr")      
-library("lavaan")       
+library("dplyr")    
+library("lavaan")    
 library("corrplot")     
 library("tidySEM")
 library("kableExtra")
@@ -41,8 +40,8 @@ library("kableExtra")
 #user_dir <- "d:/asus_documents/ku_leuven/courses/structural_equations/project/"
 # Utils contains data processing function and defines dataset for global use.
 #source(paste(user_dir, "sem_utils.R", sep=""), local = knitr::knit_global())
-source("sem_utils.R", local = knitr::knit_global())
 #source(paste(user_dir, "sem_functions.R", sep=""), local = knitr::knit_global())
+source("sem_utils.R", local = knitr::knit_global())
 source("sem_functions.R", local = knitr::knit_global())
 ```
 

@@ -1,4 +1,7 @@
 # Mediation: Trust, poltical interest, and ability
+```{r load-4, include=FALSE}
+df_subset <- data_processing(df)
+```
 
 Here we model the influence of political interest on political ability, including the
 indirect effect of political interest through government trust. We also consider the influence of 

@@ -13,9 +13,10 @@ tab:three-fact-mi-2
 tab:three-fact-mod-2
 tab:mod-three-fact-compare
 tab:three-fact-mediation
+fig:graph-mediation
 technical-preface
 introduction
 modelling-trust-in-government
 political-ability-and-trust
-mediation-trust-poltical-interest-and-ability
+mediation-political-interest-and-ability
 discussion

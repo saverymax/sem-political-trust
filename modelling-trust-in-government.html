@@ -76,7 +76,7 @@
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="modelling-trust-in-government.html"><a href="modelling-trust-in-government.html"><i class="fa fa-check"></i><b>3</b> Modelling trust in government</a></li>
 <li class="chapter" data-level="4" data-path="political-ability-and-trust.html"><a href="political-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Political ability and trust</a></li>
-<li class="chapter" data-level="5" data-path="mediation-trust-poltical-interest-and-ability.html"><a href="mediation-trust-poltical-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: Trust, poltical interest, and ability</a></li>
+<li class="chapter" data-level="5" data-path="mediation-political-interest-and-ability.html"><a href="mediation-political-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: political interest and ability</a></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/saverymax/sem-political-trust" target="blank">Published with bookdown</a></li>
@@ -101,22 +101,23 @@
 <div id="modelling-trust-in-government" class="section level1 hasAnchor">
 <h1><span class="header-section-number">3</span> Modelling trust in government<a href="modelling-trust-in-government.html#modelling-trust-in-government" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Here we investigate a CFA model for the latent factor representing trust in government,
-in order to determine the measurement component our SEM model. We start with CFA
+in order to determine the measurement component our our SEM model. We start with CFA
 for only the exogenous variables describing trust in government, because if
 we are not able to model these with a latent factor, the research question underlying this
 report will be a moot point.</p>
-We first fit a one-factor CFA model with variables
+We first fit a 1-factor CFA model with variables
 
-Table  shows the standardized solution for the one-factor model.
+<p>Table  shows the standardized solution for the 1-factor model.
 Note that this report will only present standardized solutions, for ease of interpretation of the
-factor loadings; however, standardized solutions are not always helpful
+factor loadings, particularly the fact that the squared loadings are equal to the proportion of
+variance the latent factor explains in the indicator; however, standardized solutions are not always helpful
 if it is necessary to understand linear relationships in terms of their original scale.
-Nonetheless, it can be seen that the standardized loadings are all greater than <span class="math inline">\(0.6\)</span>. In fact, all loadings for trust in government institutions are quite high, with only trust in the U.N. somewhat lower at <span class="math inline">\(0.66\)</span>. We then examine the modification indices in Table . Given the
-high value for the trstplt variable, we remove this variable, and add covariances 
-and .
+Nonetheless, it can be seen that the standardized loadings are all greater than <span class="math inline">\(0.6\)</span>. In fact, all loadings for trust in government institutions are quite high, with only trust in the U.N. somewhat lower at <span class="math inline">\(0.66\)</span>. Furthermore, all loadings are positive,
+indicating that as the score of the latent construct increases, so too do the
+exogenous variables.</p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:one-fact-trust">Table 3.1: </span>One-factor CFA for trust in government
+<span id="tab:one-fact-trust">Table 3.1: </span>1-factor CFA for trust in government
 </caption>
 <thead>
 <tr>
@@ -401,7 +402,7 @@ NA
 </table>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:one-fact-mi">Table 3.2: </span>Modification indices for one-factor model. Top 10 are shown.
+<span id="tab:one-fact-mi">Table 3.2: </span>Modification indices for 1-factor model. Top 10 are shown.
 </caption>
 <thead>
 <tr>
@@ -418,18 +419,6 @@ rhs
 </th>
 <th style="text-align:right;">
 mi
-</th>
-<th style="text-align:right;">
-epc
-</th>
-<th style="text-align:right;">
-sepc.lv
-</th>
-<th style="text-align:right;">
-sepc.all
-</th>
-<th style="text-align:right;">
-sepc.nox
 </th>
 </tr>
 </thead>
@@ -450,18 +439,6 @@ trstplt
 <td style="text-align:right;">
 495.59457
 </td>
-<td style="text-align:right;">
-1.1221139
-</td>
-<td style="text-align:right;">
-1.1221139
-</td>
-<td style="text-align:right;">
-1.5510393
-</td>
-<td style="text-align:right;">
-1.5510393
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -478,18 +455,6 @@ trstun
 </td>
 <td style="text-align:right;">
 341.58533
-</td>
-<td style="text-align:right;">
-1.1754032
-</td>
-<td style="text-align:right;">
-1.1754032
-</td>
-<td style="text-align:right;">
-0.5040259
-</td>
-<td style="text-align:right;">
-0.5040259
 </td>
 </tr>
 <tr>
@@ -508,18 +473,6 @@ trstun
 <td style="text-align:right;">
 122.08478
 </td>
-<td style="text-align:right;">
--0.5504618
-</td>
-<td style="text-align:right;">
--0.5504618
-</td>
-<td style="text-align:right;">
--0.3661501
-</td>
-<td style="text-align:right;">
--0.3661501
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -536,18 +489,6 @@ trstep
 </td>
 <td style="text-align:right;">
 101.53825
-</td>
-<td style="text-align:right;">
--0.4744659
-</td>
-<td style="text-align:right;">
--0.4744659
-</td>
-<td style="text-align:right;">
--0.3942845
-</td>
-<td style="text-align:right;">
--0.3942845
 </td>
 </tr>
 <tr>
@@ -566,18 +507,6 @@ trstep
 <td style="text-align:right;">
 70.20172
 </td>
-<td style="text-align:right;">
-0.4379716
-</td>
-<td style="text-align:right;">
-0.4379716
-</td>
-<td style="text-align:right;">
-0.2418810
-</td>
-<td style="text-align:right;">
-0.2418810
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -594,18 +523,6 @@ trstun
 </td>
 <td style="text-align:right;">
 67.24030
-</td>
-<td style="text-align:right;">
--0.3976469
-</td>
-<td style="text-align:right;">
--0.3976469
-</td>
-<td style="text-align:right;">
--0.2836251
-</td>
-<td style="text-align:right;">
--0.2836251
 </td>
 </tr>
 <tr>
@@ -624,18 +541,6 @@ trstun
 <td style="text-align:right;">
 65.63600
 </td>
-<td style="text-align:right;">
-0.4969716
-</td>
-<td style="text-align:right;">
-0.4969716
-</td>
-<td style="text-align:right;">
-0.2196921
-</td>
-<td style="text-align:right;">
-0.2196921
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -652,18 +557,6 @@ trstprt
 </td>
 <td style="text-align:right;">
 65.37500
-</td>
-<td style="text-align:right;">
--0.3555921
-</td>
-<td style="text-align:right;">
--0.3555921
-</td>
-<td style="text-align:right;">
--0.3266547
-</td>
-<td style="text-align:right;">
--0.3266547
 </td>
 </tr>
 <tr>
@@ -682,18 +575,6 @@ trstep
 <td style="text-align:right;">
 52.64476
 </td>
-<td style="text-align:right;">
--0.3365571
-</td>
-<td style="text-align:right;">
--0.3365571
-</td>
-<td style="text-align:right;">
--0.2999015
-</td>
-<td style="text-align:right;">
--0.2999015
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -711,31 +592,23 @@ trstplt
 <td style="text-align:right;">
 10.27322
 </td>
-<td style="text-align:right;">
--0.1432735
-</td>
-<td style="text-align:right;">
--0.1432735
-</td>
-<td style="text-align:right;">
--0.1227404
-</td>
-<td style="text-align:right;">
--0.1227404
-</td>
 </tr>
 </tbody>
 </table>
-We refit this modified model, for which the standardized solution
+We then examine the modification indices in Table . Given the
+high values for correlations involving the trstplt variable, we remove this variable, and add the residual covariance
+. We refit this modified model, for which the standardized solution
 is shown in Table . Table 
 compares the two models. It can be seen that the modified model
 does in fact fit better, across all fit measures. At the onset of this work,
 it was not clear if the indicators for government trust could be represented
 with a latent factor. These results indicate that representing trust in government with a measurement model
-is indeed possible and produces reasonable factor scores for each indicator on the latent variable.
+is indeed possible and produces reasonable factor scores for each indicator on the latent variable. Additionally,
+we can see that the model allowing for the covariances appears to be well-fitting,
+considering the <span class="math inline">\(\chi^2\)</span>, CFI, TFI, and RMSEA measures.
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:one-fact-trust-adj">Table 3.3: </span>One-factor CFA for trust in government, allowing for residual covariances
+<span id="tab:one-fact-trust-adj">Table 3.3: </span>1-factor CFA for trust in government, allowing for residual covariances
 </caption>
 <thead>
 <tr>
@@ -774,16 +647,16 @@ gov_trust
 trstprl
 </td>
 <td style="text-align:right;">
-0.8642252
+0.8362074
 </td>
 <td style="text-align:right;">
-0.0123368
+0.0102198
 </td>
 <td style="text-align:right;">
-70.052347
+81.82201
 </td>
 <td style="text-align:right;">
-0.0000000
+0
 </td>
 </tr>
 <tr>
@@ -797,16 +670,16 @@ gov_trust
 trstprt
 </td>
 <td style="text-align:right;">
-0.8130745
+0.8403172
 </td>
 <td style="text-align:right;">
-0.0130142
+0.0101243
 </td>
 <td style="text-align:right;">
-62.475740
+83.00006
 </td>
 <td style="text-align:right;">
-0.0000000
+0
 </td>
 </tr>
 <tr>
@@ -820,16 +693,16 @@ gov_trust
 trstep
 </td>
 <td style="text-align:right;">
-0.8796891
+0.8441887
 </td>
 <td style="text-align:right;">
-0.0143219
+0.0102196
 </td>
 <td style="text-align:right;">
-61.422801
+82.60487
 </td>
 <td style="text-align:right;">
-0.0000000
+0
 </td>
 </tr>
 <tr>
@@ -843,16 +716,16 @@ gov_trust
 trstun
 </td>
 <td style="text-align:right;">
-0.7072414
+0.7072411
 </td>
 <td style="text-align:right;">
-0.0150077
+0.0150074
 </td>
 <td style="text-align:right;">
-47.125236
+47.12630
 </td>
 <td style="text-align:right;">
-0.0000000
+0
 </td>
 </tr>
 <tr>
@@ -866,39 +739,16 @@ trstep
 trstun
 </td>
 <td style="text-align:right;">
-0.2788934
+0.3136702
 </td>
 <td style="text-align:right;">
-0.0368622
+0.0296789
 </td>
 <td style="text-align:right;">
-7.565846
+10.56878
 </td>
 <td style="text-align:right;">
-0.0000000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-trstprl
-</td>
-<td style="text-align:left;">
-~~
-</td>
-<td style="text-align:left;">
-trstep
-</td>
-<td style="text-align:right;">
--0.2523124
-</td>
-<td style="text-align:right;">
-0.0884789
-</td>
-<td style="text-align:right;">
--2.851666
-</td>
-<td style="text-align:right;">
-0.0043491
+0
 </td>
 </tr>
 <tr>
@@ -912,16 +762,16 @@ trstprl
 trstprl
 </td>
 <td style="text-align:right;">
-0.2531147
+0.3007571
 </td>
 <td style="text-align:right;">
-0.0213236
+0.0170918
 </td>
 <td style="text-align:right;">
-11.870149
+17.59657
 </td>
 <td style="text-align:right;">
-0.0000000
+0
 </td>
 </tr>
 <tr>
@@ -935,16 +785,16 @@ trstprt
 trstprt
 </td>
 <td style="text-align:right;">
-0.3389099
+0.2938670
 </td>
 <td style="text-align:right;">
-0.0211631
+0.0170152
 </td>
 <td style="text-align:right;">
-16.014193
+17.27081
 </td>
 <td style="text-align:right;">
-0.0000000
+0
 </td>
 </tr>
 <tr>
@@ -958,16 +808,16 @@ trstep
 trstep
 </td>
 <td style="text-align:right;">
-0.2261471
+0.2873454
 </td>
 <td style="text-align:right;">
-0.0251976
+0.0172545
 </td>
 <td style="text-align:right;">
-8.974956
+16.65332
 </td>
 <td style="text-align:right;">
-0.0000000
+0
 </td>
 </tr>
 <tr>
@@ -981,16 +831,16 @@ trstun
 trstun
 </td>
 <td style="text-align:right;">
-0.4998097
+0.4998101
 </td>
 <td style="text-align:right;">
-0.0212281
+0.0212276
 </td>
 <td style="text-align:right;">
-23.544686
+23.54526
 </td>
 <td style="text-align:right;">
-0.0000000
+0
 </td>
 </tr>
 <tr>
@@ -1043,7 +893,7 @@ logl
 -15574.302
 </td>
 <td style="text-align:right;">
--12906.31
+-12913.092
 </td>
 </tr>
 <tr>
@@ -1054,7 +904,7 @@ aic
 31168.604
 </td>
 <td style="text-align:right;">
-25832.61
+25844.185
 </td>
 </tr>
 <tr>
@@ -1065,7 +915,7 @@ bic
 31222.857
 </td>
 <td style="text-align:right;">
-25886.87
+25893.013
 </td>
 </tr>
 <tr>
@@ -1076,7 +926,7 @@ chisq
 551.306
 </td>
 <td style="text-align:right;">
-0.00
+13.572
 </td>
 </tr>
 <tr>
@@ -1087,7 +937,7 @@ df
 5.000
 </td>
 <td style="text-align:right;">
-0.00
+1.000
 </td>
 </tr>
 <tr>
@@ -1098,7 +948,7 @@ pvalue
 0.000
 </td>
 <td style="text-align:right;">
-NA
+0.000
 </td>
 </tr>
 <tr>
@@ -1109,7 +959,7 @@ cfi
 0.915
 </td>
 <td style="text-align:right;">
-1.00
+0.997
 </td>
 </tr>
 <tr>
@@ -1120,7 +970,7 @@ tli
 0.831
 </td>
 <td style="text-align:right;">
-1.00
+0.981
 </td>
 </tr>
 <tr>
@@ -1131,7 +981,7 @@ rmsea
 0.255
 </td>
 <td style="text-align:right;">
-0.00
+0.087
 </td>
 </tr>
 </tbody>

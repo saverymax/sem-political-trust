@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Mediation: Trust, poltical interest, and ability | Structural Equation Modelling of Political Trust and Ability</title>
+  <title>5 Mediation: political interest and ability | Structural Equation Modelling of Political Trust and Ability</title>
   <meta name="description" content="Bookdown for structural equations project" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Mediation: Trust, poltical interest, and ability | Structural Equation Modelling of Political Trust and Ability" />
+  <meta property="og:title" content="5 Mediation: political interest and ability | Structural Equation Modelling of Political Trust and Ability" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Bookdown for structural equations project" />
   <meta name="github-repo" content="saverymax/sem-political-trust" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Mediation: Trust, poltical interest, and ability | Structural Equation Modelling of Political Trust and Ability" />
+  <meta name="twitter:title" content="5 Mediation: political interest and ability | Structural Equation Modelling of Political Trust and Ability" />
   
   <meta name="twitter:description" content="Bookdown for structural equations project" />
   
@@ -76,7 +76,7 @@
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="modelling-trust-in-government.html"><a href="modelling-trust-in-government.html"><i class="fa fa-check"></i><b>3</b> Modelling trust in government</a></li>
 <li class="chapter" data-level="4" data-path="political-ability-and-trust.html"><a href="political-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Political ability and trust</a></li>
-<li class="chapter" data-level="5" data-path="mediation-trust-poltical-interest-and-ability.html"><a href="mediation-trust-poltical-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: Trust, poltical interest, and ability</a></li>
+<li class="chapter" data-level="5" data-path="mediation-political-interest-and-ability.html"><a href="mediation-political-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: political interest and ability</a></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/saverymax/sem-political-trust" target="blank">Published with bookdown</a></li>
@@ -98,16 +98,21 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mediation-trust-poltical-interest-and-ability" class="section level1 hasAnchor">
-<h1><span class="header-section-number">5</span> Mediation: Trust, poltical interest, and ability<a href="mediation-trust-poltical-interest-and-ability.html#mediation-trust-poltical-interest-and-ability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Here we model the influence of political interest on political ability, including the
-indirect effect of political interest through government trust. We also consider the influence of
+<div id="mediation-political-interest-and-ability" class="section level1 hasAnchor">
+<h1><span class="header-section-number">5</span> Mediation: political interest and ability<a href="mediation-political-interest-and-ability.html#mediation-political-interest-and-ability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Having developed a reliable measurement model for our constructs, we are now
+prepared to specify the structural part of our model.
+Specifically, we consider a mediation model to explore the influence of political interest on political ability.
+We include the indirect effect of political interest through government trust. We also consider the influence of
 trust in people on government trust.</p>
+<p>what is the effect of political interest and trust in government
+on how people conceive of their ability to participate in politics?
+Furthermore, is there a relationship between government trust and social trust?</p>
 The mediation model is written as
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:three-fact-mediation">Table 5.1: </span>Three-factor medidation model, considering structural relationship
+<span id="tab:three-fact-mediation">Table 5.1: </span>3-factor medidation model, considering structural relationship
 between trust in people and trust in government
 </caption>
 <thead>
@@ -133,6 +138,9 @@ se
 <th style="text-align:right;">
 z
 </th>
+<th style="text-align:right;">
+pvalue
+</th>
 </tr>
 </thead>
 <tbody>
@@ -149,13 +157,16 @@ trstprl
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.8575935
+0.8469057
 </td>
 <td style="text-align:right;">
-0.0111174
+0.0097754
 </td>
 <td style="text-align:right;">
-77.139725
+86.636284
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -171,13 +182,16 @@ trstprt
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.8288318
+0.8366908
 </td>
 <td style="text-align:right;">
-0.0113644
+0.0100414
 </td>
 <td style="text-align:right;">
-72.932008
+83.323837
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -193,13 +207,16 @@ trstep
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.8350702
+0.8228872
 </td>
 <td style="text-align:right;">
-0.0128395
+0.0105741
 </td>
 <td style="text-align:right;">
-65.039260
+77.820898
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -215,13 +232,16 @@ trstun
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.6975900
+0.6977877
 </td>
 <td style="text-align:right;">
-0.0149520
+0.0149736
 </td>
 <td style="text-align:right;">
-46.655358
+46.601084
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -237,13 +257,16 @@ ppltrst
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.7583931
+0.7578758
 </td>
 <td style="text-align:right;">
-0.0197297
+0.0196952
 </td>
 <td style="text-align:right;">
-38.439104
+38.480188
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -259,13 +282,16 @@ pplfair
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.6619311
+0.6616598
 </td>
 <td style="text-align:right;">
-0.0204244
+0.0204047
 </td>
 <td style="text-align:right;">
-32.408783
+32.426851
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -281,18 +307,21 @@ pplhlp
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.5984337
+0.5993471
 </td>
 <td style="text-align:right;">
-0.0212032
+0.0211772
 </td>
 <td style="text-align:right;">
-28.223772
+28.301543
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-poltical_able
+political_able
 </td>
 <td style="text-align:left;">
 =~
@@ -303,18 +332,46 @@ psppipla
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.7981589
+0.7989192
 </td>
 <td style="text-align:right;">
-0.0204590
+0.0199036
 </td>
 <td style="text-align:right;">
-39.012634
+40.139491
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-poltical_able
+political_able
+</td>
+<td style="text-align:left;">
+=~
+</td>
+<td style="text-align:left;">
+actrolga
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+0.4188689
+</td>
+<td style="text-align:right;">
+0.0243720
+</td>
+<td style="text-align:right;">
+17.186482
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+political_able
 </td>
 <td style="text-align:left;">
 =~
@@ -325,18 +382,21 @@ psppsgva
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.6616023
+0.6576256
 </td>
 <td style="text-align:right;">
-0.0208925
+0.0205864
 </td>
 <td style="text-align:right;">
-31.666995
+31.944672
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-poltical_able
+political_able
 </td>
 <td style="text-align:left;">
 =~
@@ -347,13 +407,41 @@ cptppola
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.4469465
+0.4488493
 </td>
 <td style="text-align:right;">
-0.0238328
+0.0237946
 </td>
 <td style="text-align:right;">
-18.753417
+18.863474
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+actrolga
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+cptppola
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+0.5564712
+</td>
+<td style="text-align:right;">
+0.0178356
+</td>
+<td style="text-align:right;">
+31.200090
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -369,40 +457,21 @@ trstun
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.3279327
+0.3367277
 </td>
 <td style="text-align:right;">
-0.0292544
+0.0272503
 </td>
 <td style="text-align:right;">
-11.209700
+12.356859
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-trstprl
-</td>
-<td style="text-align:left;">
-~~
-</td>
-<td style="text-align:left;">
-trstep
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:right;">
--0.0855858
-</td>
-<td style="text-align:right;">
-0.0516492
-</td>
-<td style="text-align:right;">
--1.657060
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-poltical_able
+political_able
 </td>
 <td style="text-align:left;">
 ~
@@ -414,13 +483,16 @@ polintr
 c1
 </td>
 <td style="text-align:right;">
--0.2490213
+-0.2610118
 </td>
 <td style="text-align:right;">
-0.0253235
+0.0251665
 </td>
 <td style="text-align:right;">
--9.833610
+-10.371398
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -437,13 +509,16 @@ people_trust
 a1
 </td>
 <td style="text-align:right;">
-0.4512955
+0.4570569
 </td>
 <td style="text-align:right;">
-0.0253129
+0.0253188
 </td>
 <td style="text-align:right;">
-17.828660
+18.052111
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -460,18 +535,21 @@ polintr
 a2
 </td>
 <td style="text-align:right;">
--0.1776192
+-0.1792514
 </td>
 <td style="text-align:right;">
-0.0232438
+0.0233300
 </td>
 <td style="text-align:right;">
--7.641556
+-7.683299
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-poltical_able
+political_able
 </td>
 <td style="text-align:left;">
 ~
@@ -483,13 +561,16 @@ gov_trust
 b1
 </td>
 <td style="text-align:right;">
-0.4229440
+0.4172042
 </td>
 <td style="text-align:right;">
-0.0258140
+0.0258741
 </td>
 <td style="text-align:right;">
-16.384307
+16.124404
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -505,13 +586,16 @@ trstprl
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.2645334
+0.2827507
 </td>
 <td style="text-align:right;">
-0.0190684
+0.0165577
 </td>
 <td style="text-align:right;">
-13.872847
+17.076674
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -527,13 +611,16 @@ trstprt
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.3130379
+0.2999485
 </td>
 <td style="text-align:right;">
-0.0188384
+0.0168032
 </td>
 <td style="text-align:right;">
-16.616988
+17.850728
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -549,13 +636,16 @@ trstep
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.3026578
+0.3228566
 </td>
 <td style="text-align:right;">
-0.0214437
+0.0174026
 </td>
 <td style="text-align:right;">
-14.114045
+18.552194
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -571,13 +661,16 @@ trstun
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.5133683
+0.5130923
 </td>
 <td style="text-align:right;">
-0.0208607
+0.0208968
 </td>
 <td style="text-align:right;">
-24.609348
+24.553587
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -593,13 +686,16 @@ ppltrst
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.4248400
+0.4256242
 </td>
 <td style="text-align:right;">
-0.0299258
+0.0298531
 </td>
 <td style="text-align:right;">
-14.196455
+14.257305
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -615,13 +711,16 @@ pplfair
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.5618472
+0.5622063
 </td>
 <td style="text-align:right;">
-0.0270391
+0.0270019
 </td>
 <td style="text-align:right;">
-20.779034
+20.820967
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -637,13 +736,16 @@ pplhlp
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.6418771
+0.6407831
 </td>
 <td style="text-align:right;">
-0.0253774
+0.0253850
 </td>
 <td style="text-align:right;">
-25.293261
+25.242615
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -659,13 +761,41 @@ psppipla
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.3629423
+0.3617282
 </td>
 <td style="text-align:right;">
-0.0326590
+0.0318027
 </td>
 <td style="text-align:right;">
-11.113071
+11.374140
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+actrolga
+</td>
+<td style="text-align:left;">
+~~
+</td>
+<td style="text-align:left;">
+actrolga
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+0.8245489
+</td>
+<td style="text-align:right;">
+0.0204173
+</td>
+<td style="text-align:right;">
+40.384732
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -681,13 +811,16 @@ psppsgva
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.5622824
+0.5675285
 </td>
 <td style="text-align:right;">
-0.0276450
+0.0270763
 </td>
 <td style="text-align:right;">
-20.339361
+20.960355
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -703,13 +836,16 @@ cptppola
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.8002388
+0.7985343
 </td>
 <td style="text-align:right;">
-0.0213040
+0.0213604
 </td>
 <td style="text-align:right;">
-37.562891
+37.383868
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -725,13 +861,16 @@ gov_trust
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.7647838
+0.7589679
 </td>
 <td style="text-align:right;">
-0.0234684
+0.0237428
 </td>
 <td style="text-align:right;">
-32.587810
+31.966199
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -755,27 +894,33 @@ people_trust
 <td style="text-align:right;">
 NA
 </td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
-poltical_able
+political_able
 </td>
 <td style="text-align:left;">
 ~~
 </td>
 <td style="text-align:left;">
-poltical_able
+political_able
 </td>
 <td style="text-align:left;">
 </td>
 <td style="text-align:right;">
-0.7216923
+0.7187742
 </td>
 <td style="text-align:right;">
-0.0245780
+0.0245438
 </td>
 <td style="text-align:right;">
-29.363287
+29.285355
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -795,6 +940,9 @@ polintr
 </td>
 <td style="text-align:right;">
 0.0000000
+</td>
+<td style="text-align:right;">
+NA
 </td>
 <td style="text-align:right;">
 NA
@@ -814,13 +962,16 @@ a1*b1
 ab_trust
 </td>
 <td style="text-align:right;">
-0.1908727
+0.1906861
 </td>
 <td style="text-align:right;">
-0.0162711
+0.0162753
 </td>
 <td style="text-align:right;">
-11.730782
+11.716311
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -837,13 +988,16 @@ a2*b1
 ab_interest
 </td>
 <td style="text-align:right;">
--0.0751230
+-0.0747845
 </td>
 <td style="text-align:right;">
-0.0108335
+0.0107628
 </td>
 <td style="text-align:right;">
--6.934349
+-6.948408
+</td>
+<td style="text-align:right;">
+0.0000000
 </td>
 </tr>
 <tr>
@@ -860,18 +1014,57 @@ c1+ab_interest
 total_interest
 </td>
 <td style="text-align:right;">
--0.3241443
+-0.3357963
 </td>
 <td style="text-align:right;">
-0.0253777
+0.0251040
 </td>
 <td style="text-align:right;">
--12.772795
+-13.376211
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+total_trust
+</td>
+<td style="text-align:left;">
+:=
+</td>
+<td style="text-align:left;">
+c1+ab_trust
+</td>
+<td style="text-align:left;">
+total_trust
+</td>
+<td style="text-align:right;">
+-0.0703257
+</td>
+<td style="text-align:right;">
+0.0331183
+</td>
+<td style="text-align:right;">
+-2.123471
+</td>
+<td style="text-align:right;">
+0.0337144
 </td>
 </tr>
 </tbody>
 </table>
-<p>Table  shows the estimates for the mediation model.</p>
+Table  shows the estimates for the mediation model.
+We can see that the term  is significant. Therefore, government trust
+mediates between political interest and one’s described ability to participate in
+the political system. Additionally, the total effect, , is significant,
+The model can be visualized below.
+<div class="figure"><span style="display:block;" id="fig:graph-mediation"></span>
+<img src="structural-equation-politics_files/figure-html/graph-mediation-1.png" alt="Mediation model graph structure" width="672" />
+<p class="caption">
+Figure 5.1: Mediation model graph structure
+</p>
+</div>
 
 </div>
             </section>

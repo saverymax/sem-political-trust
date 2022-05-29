@@ -12,11 +12,13 @@ tab:three-fact-mod-1
 tab:three-fact-mi-2
 tab:three-fact-mod-2
 tab:mod-three-fact-compare
+fig:graph-pol
 tab:three-fact-mediation
+tab:med-fit
 fig:graph-mediation
 technical-preface
 introduction
 modelling-trust-in-government
-political-ability-and-trust
-mediation-political-interest-and-ability
+cfa-political-ability-and-trust
+mediation-trust-in-government
 discussion

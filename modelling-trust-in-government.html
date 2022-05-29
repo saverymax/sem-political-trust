@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="Bookdown for structural equations project" />
   
 
-<meta name="author" content="Max Savery" />
+<meta name="author" content="Max Emmet Savery" />
 
 
 
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="introduction.html"/>
-<link rel="next" href="political-ability-and-trust.html"/>
+<link rel="next" href="cfa-political-ability-and-trust.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -75,8 +75,8 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Technical preface</a></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="modelling-trust-in-government.html"><a href="modelling-trust-in-government.html"><i class="fa fa-check"></i><b>3</b> Modelling trust in government</a></li>
-<li class="chapter" data-level="4" data-path="political-ability-and-trust.html"><a href="political-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Political ability and trust</a></li>
-<li class="chapter" data-level="5" data-path="mediation-political-interest-and-ability.html"><a href="mediation-political-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: political interest and ability</a></li>
+<li class="chapter" data-level="4" data-path="cfa-political-ability-and-trust.html"><a href="cfa-political-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> CFA: Political ability and trust</a></li>
+<li class="chapter" data-level="5" data-path="mediation-trust-in-government.html"><a href="mediation-trust-in-government.html"><i class="fa fa-check"></i><b>5</b> Mediation: Trust in government</a></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/saverymax/sem-political-trust" target="blank">Published with bookdown</a></li>
@@ -100,12 +100,12 @@
             <section class="normal" id="section-">
 <div id="modelling-trust-in-government" class="section level1 hasAnchor">
 <h1><span class="header-section-number">3</span> Modelling trust in government<a href="modelling-trust-in-government.html#modelling-trust-in-government" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Here we investigate a CFA model for the latent factor representing trust in government,
-in order to determine the measurement component our our SEM model. We start with CFA
-for only the exogenous variables describing trust in government, because if
+Here we investigate a CFA model for the latent factor representing trust in government,
+in order to determine the measurement component of our SEM model. We start with CFA
+for only the variables describing trust in government, because if
 we are not able to model these with a latent factor, the research question underlying this
-report will be a moot point.</p>
-We first fit a 1-factor CFA model with variables
+report will be a moot point.
+The 1-factor CFA model can be written as
 
 <p>Table  shows the standardized solution for the 1-factor model.
 Note that this report will only present standardized solutions, for ease of interpretation of the
@@ -156,13 +156,13 @@ gov_trust
 trstprl
 </td>
 <td style="text-align:right;">
-0.7935595
+0.794
 </td>
 <td style="text-align:right;">
-0.0100107
+0.010
 </td>
 <td style="text-align:right;">
-79.27148
+79.271
 </td>
 <td style="text-align:right;">
 0
@@ -179,13 +179,13 @@ gov_trust
 trstprt
 </td>
 <td style="text-align:right;">
-0.9210866
+0.921
 </td>
 <td style="text-align:right;">
-0.0053530
+0.005
 </td>
 <td style="text-align:right;">
-172.06964
+172.070
 </td>
 <td style="text-align:right;">
 0
@@ -202,13 +202,13 @@ gov_trust
 trstplt
 </td>
 <td style="text-align:right;">
-0.9120508
+0.912
 </td>
 <td style="text-align:right;">
-0.0056435
+0.006
 </td>
 <td style="text-align:right;">
-161.61045
+161.610
 </td>
 <td style="text-align:right;">
 0
@@ -225,13 +225,13 @@ gov_trust
 trstep
 </td>
 <td style="text-align:right;">
-0.8028929
+0.803
 </td>
 <td style="text-align:right;">
-0.0096602
+0.010
 </td>
 <td style="text-align:right;">
-83.11342
+83.113
 </td>
 <td style="text-align:right;">
 0
@@ -248,13 +248,13 @@ gov_trust
 trstun
 </td>
 <td style="text-align:right;">
-0.6687113
+0.669
 </td>
 <td style="text-align:right;">
-0.0143738
+0.014
 </td>
 <td style="text-align:right;">
-46.52282
+46.523
 </td>
 <td style="text-align:right;">
 0
@@ -271,13 +271,13 @@ trstprl
 trstprl
 </td>
 <td style="text-align:right;">
-0.3702633
+0.370
 </td>
 <td style="text-align:right;">
-0.0158881
+0.016
 </td>
 <td style="text-align:right;">
-23.30443
+23.304
 </td>
 <td style="text-align:right;">
 0
@@ -294,13 +294,13 @@ trstprt
 trstprt
 </td>
 <td style="text-align:right;">
-0.1515995
+0.152
 </td>
 <td style="text-align:right;">
-0.0098611
+0.010
 </td>
 <td style="text-align:right;">
-15.37344
+15.373
 </td>
 <td style="text-align:right;">
 0
@@ -317,13 +317,13 @@ trstplt
 trstplt
 </td>
 <td style="text-align:right;">
-0.1681633
+0.168
 </td>
 <td style="text-align:right;">
-0.0102943
+0.010
 </td>
 <td style="text-align:right;">
-16.33551
+16.336
 </td>
 <td style="text-align:right;">
 0
@@ -340,13 +340,13 @@ trstep
 trstep
 </td>
 <td style="text-align:right;">
-0.3553630
+0.355
 </td>
 <td style="text-align:right;">
-0.0155122
+0.016
 </td>
 <td style="text-align:right;">
-22.90858
+22.909
 </td>
 <td style="text-align:right;">
 0
@@ -363,13 +363,13 @@ trstun
 trstun
 </td>
 <td style="text-align:right;">
-0.5528252
+0.553
 </td>
 <td style="text-align:right;">
-0.0192239
+0.019
 </td>
 <td style="text-align:right;">
-28.75719
+28.757
 </td>
 <td style="text-align:right;">
 0
@@ -386,10 +386,10 @@ gov_trust
 gov_trust
 </td>
 <td style="text-align:right;">
-1.0000000
+1.000
 </td>
 <td style="text-align:right;">
-0.0000000
+0.000
 </td>
 <td style="text-align:right;">
 NA
@@ -437,7 +437,7 @@ trstprt
 trstplt
 </td>
 <td style="text-align:right;">
-495.59457
+495.595
 </td>
 </tr>
 <tr>
@@ -454,7 +454,7 @@ trstep
 trstun
 </td>
 <td style="text-align:right;">
-341.58533
+341.585
 </td>
 </tr>
 <tr>
@@ -471,7 +471,7 @@ trstplt
 trstun
 </td>
 <td style="text-align:right;">
-122.08478
+122.085
 </td>
 </tr>
 <tr>
@@ -488,7 +488,7 @@ trstplt
 trstep
 </td>
 <td style="text-align:right;">
-101.53825
+101.538
 </td>
 </tr>
 <tr>
@@ -505,7 +505,7 @@ trstprl
 trstep
 </td>
 <td style="text-align:right;">
-70.20172
+70.202
 </td>
 </tr>
 <tr>
@@ -522,7 +522,7 @@ trstprt
 trstun
 </td>
 <td style="text-align:right;">
-67.24030
+67.240
 </td>
 </tr>
 <tr>
@@ -539,7 +539,7 @@ trstprl
 trstun
 </td>
 <td style="text-align:right;">
-65.63600
+65.636
 </td>
 </tr>
 <tr>
@@ -556,7 +556,7 @@ trstprl
 trstprt
 </td>
 <td style="text-align:right;">
-65.37500
+65.375
 </td>
 </tr>
 <tr>
@@ -573,7 +573,7 @@ trstprt
 trstep
 </td>
 <td style="text-align:right;">
-52.64476
+52.645
 </td>
 </tr>
 <tr>
@@ -590,7 +590,7 @@ trstprl
 trstplt
 </td>
 <td style="text-align:right;">
-10.27322
+10.273
 </td>
 </tr>
 </tbody>
@@ -647,13 +647,13 @@ gov_trust
 trstprl
 </td>
 <td style="text-align:right;">
-0.8362074
+0.836
 </td>
 <td style="text-align:right;">
-0.0102198
+0.010
 </td>
 <td style="text-align:right;">
-81.82201
+81.822
 </td>
 <td style="text-align:right;">
 0
@@ -670,13 +670,13 @@ gov_trust
 trstprt
 </td>
 <td style="text-align:right;">
-0.8403172
+0.840
 </td>
 <td style="text-align:right;">
-0.0101243
+0.010
 </td>
 <td style="text-align:right;">
-83.00006
+83.000
 </td>
 <td style="text-align:right;">
 0
@@ -693,13 +693,13 @@ gov_trust
 trstep
 </td>
 <td style="text-align:right;">
-0.8441887
+0.844
 </td>
 <td style="text-align:right;">
-0.0102196
+0.010
 </td>
 <td style="text-align:right;">
-82.60487
+82.605
 </td>
 <td style="text-align:right;">
 0
@@ -716,13 +716,13 @@ gov_trust
 trstun
 </td>
 <td style="text-align:right;">
-0.7072411
+0.707
 </td>
 <td style="text-align:right;">
-0.0150074
+0.015
 </td>
 <td style="text-align:right;">
-47.12630
+47.126
 </td>
 <td style="text-align:right;">
 0
@@ -739,13 +739,13 @@ trstep
 trstun
 </td>
 <td style="text-align:right;">
-0.3136702
+0.314
 </td>
 <td style="text-align:right;">
-0.0296789
+0.030
 </td>
 <td style="text-align:right;">
-10.56878
+10.569
 </td>
 <td style="text-align:right;">
 0
@@ -762,13 +762,13 @@ trstprl
 trstprl
 </td>
 <td style="text-align:right;">
-0.3007571
+0.301
 </td>
 <td style="text-align:right;">
-0.0170918
+0.017
 </td>
 <td style="text-align:right;">
-17.59657
+17.597
 </td>
 <td style="text-align:right;">
 0
@@ -785,13 +785,13 @@ trstprt
 trstprt
 </td>
 <td style="text-align:right;">
-0.2938670
+0.294
 </td>
 <td style="text-align:right;">
-0.0170152
+0.017
 </td>
 <td style="text-align:right;">
-17.27081
+17.271
 </td>
 <td style="text-align:right;">
 0
@@ -808,13 +808,13 @@ trstep
 trstep
 </td>
 <td style="text-align:right;">
-0.2873454
+0.287
 </td>
 <td style="text-align:right;">
-0.0172545
+0.017
 </td>
 <td style="text-align:right;">
-16.65332
+16.653
 </td>
 <td style="text-align:right;">
 0
@@ -831,13 +831,13 @@ trstun
 trstun
 </td>
 <td style="text-align:right;">
-0.4998101
+0.500
 </td>
 <td style="text-align:right;">
-0.0212276
+0.021
 </td>
 <td style="text-align:right;">
-23.54526
+23.545
 </td>
 <td style="text-align:right;">
 0
@@ -854,10 +854,10 @@ gov_trust
 gov_trust
 </td>
 <td style="text-align:right;">
-1.0000000
+1.000
 </td>
 <td style="text-align:right;">
-0.0000000
+0.000
 </td>
 <td style="text-align:right;">
 NA
@@ -994,7 +994,7 @@ rmsea
         </div>
       </div>
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="political-ability-and-trust.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cfa-political-ability-and-trust.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

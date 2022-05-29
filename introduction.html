@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="Bookdown for structural equations project" />
   
 
-<meta name="author" content="Max Savery" />
+<meta name="author" content="Max Emmet Savery" />
 
 
 
@@ -75,8 +75,8 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Technical preface</a></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="modelling-trust-in-government.html"><a href="modelling-trust-in-government.html"><i class="fa fa-check"></i><b>3</b> Modelling trust in government</a></li>
-<li class="chapter" data-level="4" data-path="political-ability-and-trust.html"><a href="political-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> Political ability and trust</a></li>
-<li class="chapter" data-level="5" data-path="mediation-political-interest-and-ability.html"><a href="mediation-political-interest-and-ability.html"><i class="fa fa-check"></i><b>5</b> Mediation: political interest and ability</a></li>
+<li class="chapter" data-level="4" data-path="cfa-political-ability-and-trust.html"><a href="cfa-political-ability-and-trust.html"><i class="fa fa-check"></i><b>4</b> CFA: Political ability and trust</a></li>
+<li class="chapter" data-level="5" data-path="mediation-trust-in-government.html"><a href="mediation-trust-in-government.html"><i class="fa fa-check"></i><b>5</b> Mediation: Trust in government</a></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/saverymax/sem-political-trust" target="blank">Published with bookdown</a></li>
@@ -100,20 +100,18 @@
             <section class="normal" id="section-">
 <div id="introduction" class="section level1 hasAnchor">
 <h1><span class="header-section-number">2</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>We introduce the topic of this report: We conduct structural equations modelling
-on European Social Survey data, in order to</p>
-<p>This report focuses on the relationship between individual’s trust in government,
-trust in others, and perceived political ability. We use
-European Social Survey (ESS) data in this work, with only responses from round 9 , as that had all the variables we wanted to include in this study.
-We split them into three categories, which will become our latent
+<p>This report focuses on the relationship between individual trust in government,
+trust in others, and perceived ability to participate in the political system of one’s country. We use
+the European Social Survey (ESS) data in this work, with only responses from round 9 .
+We split the variables into three categories, which will become our latent
 variables: Extent of trust in government or institutions, social trust (or general trust in people), and the extent to which people perceive it possible to participate in their country’s political system. In a mediation analysis described later, we will also consider the effect of political interest
-on trust in government. The variables used in the analysis are shown in Table  and are taken from the ESS documentation .</p>
+on poltical ability. The variables used in the analysis are shown in Table , with descriptions taken from the ESS documentation .</p>
 
-<p>Before we can begin with CFA and SEM, We first discuss the correlation present in the data. From the correlation plot , it can be seen that there are high levels of correlation between the
+Before we can begin with CFA and SEM, We first discuss the correlation present in the data. From the correlation plot  in Figure , it can be seen that there are high levels of correlation between the
 variables related to trust in government. This will likely affect our model specification later on,
-when using the modificaiton indices to choose which indicators to remove and which residual covariances to add. Interestingly, political interest (polintr) is highly negatively correlated with one’s reported ability to actively participate in politics (actrolga) and one’s confidence to do so (cptppola). This insight
-will be important when we formulate the mediation model.</p>
-<div class="figure"><span style="display:block;" id="fig:exploratory"></span>
+when using the modification indices to choose which indicators to remove and which residual covariances to add. Interestingly, political interest (polintr) is highly negatively correlated with one’s reported ability to actively participate in politics (actrolga) and one’s confidence to do so (cptppola). This insight
+will be important when we formulate the mediation model.
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:exploratory"></span>
 <img src="structural-equation-politics_files/figure-html/exploratory-1.png" alt="Correlation between variables related to government trust, social trust, and poltical ability." width="672" />
 <p class="caption">
 Figure 2.1: Correlation between variables related to government trust, social trust, and poltical ability.

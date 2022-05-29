@@ -4,12 +4,11 @@ df_subset <- data_processing(df)
 ```
 
 Here we investigate a CFA model for the latent factor representing trust in government, 
-in order to determine the measurement component our our SEM model. We start with CFA 
-for only the exogenous variables describing trust in government, because if 
+in order to determine the measurement component of our SEM model. We start with CFA 
+for only the variables describing trust in government, because if 
 we are not able to model these with a latent factor, the research question underlying this 
 report will be a moot point.
-
-We first fit a 1-factor CFA model with variables 
+The 1-factor CFA model can be written as
 \begin{verbatim}
 gov_trust =~ trstprl + trstprt + trstplt  + trstep + trstun
 \end{verbatim}

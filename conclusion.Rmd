@@ -1,4 +1,15 @@
 # Discussion
 
-We have conducted a SEM analysis on the relationship between trust in people,
-trust in government, and perceived poltical ability.
+We have conducted a SEM analysis on the relationship between social trust,
+trust in government, and perceived ability to participate in the political system
+of one's country. We first fit a CFA model to determine the measurement components
+of the CFA model. Settling on a 3-factor model, with latent factors for 
+government trust, social trust, and political ability, we then proceed
+to fit a SEM model to conduct a mediation analysis between political interest,
+government trust, and social trust. We find that there is mediation between (1)
+political interest and government trust, affecting political ability, and (2)
+mediation between social trust and government trust, affecting political ability.
+That is, the extent to which one is interested in politics will have a negative 
+impact, directly and indirectly, on the extent to which it is believed that it is possible to participate 
+in a given political system. Furthermore, social trust
+will have a positive, but indirect, impact. 

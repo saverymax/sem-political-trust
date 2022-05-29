@@ -6,16 +6,12 @@
 #df <- readr::read_csv(data_file)
 df_subset <- data_processing(df)
 ```
-
-We introduce the topic of this report: We conduct structural equations modelling
-on European Social Survey data, in order to 
-
-This report focuses on the relationship between individual's trust in government,
-trust in others, and perceived political ability. We use 
-European Social Survey (ESS) data in this work, with only responses from round 9 \citep{ESS-2018}, as that had all the variables we wanted to include in this study. 
-We split them into three categories, which will become our latent 
+This report focuses on the relationship between individual trust in government,
+trust in others, and perceived ability to participate in the political system of one's country. We use 
+the European Social Survey (ESS) data in this work, with only responses from round 9 \citep{ESS-2018}.
+We split the variables into three categories, which will become our latent 
 variables: Extent of trust in government or institutions, social trust (or general trust in people), and the extent to which people perceive it possible to participate in their country's political system. In a mediation analysis described later, we will also consider the effect of political interest
-on trust in government. The variables used in the analysis are shown in Table \ref{tab:var_desc} and are taken from the ESS documentation \citep{ESS-2021}.
+on poltical ability. The variables used in the analysis are shown in Table \ref{tab:var_desc}, with descriptions taken from the ESS documentation \citep{ESS-2021}.
 
 \begin{table}[H]
     \centering
@@ -48,11 +44,10 @@ on trust in government. The variables used in the analysis are shown in Table \r
     \label{tab:var_desc}
 \end{table}
 
-Before we can begin with CFA and SEM, We first discuss the correlation present in the data. From the correlation plot \citep{R-corrplot}, it can be seen that there are high levels of correlation between the 
+Before we can begin with CFA and SEM, We first discuss the correlation present in the data. From the correlation plot \citep{R-corrplot} in Figure \ref{fig:exploratory}, it can be seen that there are high levels of correlation between the 
 variables related to trust in government. This will likely affect our model specification later on,
-when using the modificaiton indices to choose which indicators to remove and which residual covariances to add. Interestingly, political interest (polintr) is highly negatively correlated with one's reported ability to actively participate in politics (actrolga) and one's confidence to do so (cptppola). This insight
+when using the modification indices to choose which indicators to remove and which residual covariances to add. Interestingly, political interest (polintr) is highly negatively correlated with one's reported ability to actively participate in politics (actrolga) and one's confidence to do so (cptppola). This insight
 will be important when we formulate the mediation model.
-
-```{r exploratory, results='hide', echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Correlation between variables related to government trust, social trust, and poltical ability."}
+```{r exploratory, results='hide', echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Correlation between variables related to government trust, social trust, and poltical ability.", fig.align='center'}
 exploratory_plots(df_subset)
 ```

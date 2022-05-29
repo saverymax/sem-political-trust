@@ -16,7 +16,7 @@ exploratory_plots <- function(df_subset){
 }
 
 print_fit <- function(fit, caption, label){
-    fit_print <- standardizedsolution(fit)
+    fit_print <- standardizedsolution(fit) %>% mutate_if(is.numeric, round, digits=3)
     if (label=="three-fact-mediation"){
       indices <- c(1:3, 4:8)
     }else{
@@ -29,7 +29,7 @@ print_fit <- function(fit, caption, label){
 print_mi <- function(fit, caption, label){
     # Get modification indices
     mi<-inspect(fit, "mi")
-    mi.sorted<-mi[order(-mi$mi), ]
+    mi.sorted <- mi[order(-mi$mi), ] %>% mutate_if(is.numeric, round, digits=3)
     print(kbl(mi.sorted[1:10,1:4], booktabs = T, escape=T, caption=caption, label=label, linesep = "") %>%
               kable_styling(latex_options = "HOLD_position"))
 }
@@ -188,16 +188,20 @@ compare_poli_adj <- function(fit_politics, fit_politics_adj_1, fit_politics_adj_
 }
 
 graph_model <- function(fit){
-    graph_data <- prepare_graph(fit)
-    edges(graph_data) <- graph_data %>%
-        edges() %>%
-        mutate(colour = "black")
-    plot(graph_data,
-         #label = "est_std",   # get standardized results (not rounded)
-         angle = 170          # adjust the arrows
-    )
+    lay <- get_layout(
+    "ppltrst", "pplfair", "pplhlp", "", "", "",
+    "", "people_trust", "trstprl", "trstprt", "trstep", "trstun",
+    "", "polintr", "", "gov_trust", "", "",
+    "", "", "political_able", "", "", "",
+    "", "psppipla",  "actrolga", "psppsgva", "cptppola", "",
+    rows = 5)
+  p <- graph_sem(model = fit,
+          layout = lay,
+          angle = 170
+          #label = "est_std"
+  )
+  p
 }
-
 
 fit_mediation_model <- function(df_subset){
     # So then add in mediation model.
@@ -213,7 +217,7 @@ fit_mediation_model <- function(df_subset){
         trstep ~~ trstun
 
         ## Direct effect(s) ##
-        political_able ~ c1*polintr
+        political_able ~ c1*polintr + c2*people_trust
 
         ## Mediator ##
         ## Path A
@@ -225,7 +229,7 @@ fit_mediation_model <- function(df_subset){
         ab_interest := a2*b1
         ## Total effect ##
         total_interest := c1 + ab_interest
-        total_trust := c1 + ab_trust
+        total_trust := c2 + ab_trust
     '
     fit_mediation <- cfa(politics_mediation_model,
                           data = df_subset)
@@ -251,6 +255,17 @@ graph_mediation <- function(fit){
   )
   p
 }
+
+print_med_fit_measures <- function(fit_med){
+    m1 <- fitMeasures(fit_med, c("logl","AIC", "BIC", "chisq", "df", "pvalue", "cfi", "tli","rmsea"), output = "matrix")
+    df_compare <- data.frame("med"=round(m1[,1],3))
+    names(df_compare) <- c("Mediation model")
+    caption <- paste("Fit measures for mediation model")
+    label <- paste("med-fit")
+    print(kbl(df_compare, booktabs = T, escape=T, caption=caption, label=label, linesep = "") %>%
+              kable_styling(latex_options = "HOLD_position"))
+}
+
 
 # Not including this in analysis
 fit_multigroup_model <- function(df_subset){

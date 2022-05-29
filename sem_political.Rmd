@@ -1,4 +1,4 @@
-# Political ability and trust
+# CFA: Political ability and trust
 ```{r load-3, include=FALSE}
 df_subset <- data_processing(df)
 ```
@@ -46,7 +46,7 @@ print_fit(fit_coll, caption, label)
 ```
 ```{r poli-compare, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 compare_poli(fit_politics, fit_coll)
-caption <- "Modification indices for i model. Top 10 are shown."
+caption <- "Modification indices for 3-factor model. Top 10 are shown."
 label <- "three-fact-mi"
 print_mi(fit_politics, caption, label)
 ```
@@ -103,8 +103,7 @@ of the measurement model here, and potentially could be part of a structural rel
 The fit measures of the original 3-factor model and the two modified models are shown in Table \ref{tab:mod-three-fact-compare}. 
 While both modified models provide a much better fit than the original, 
 the second set of modifications appears to make only a marginal difference.
-Given the small negative loading of trstep on social trust, we proceed with the model 
-with only the first set of modifications. This model will be used in our mediation analysis.
+Given the small negative loading of trstep on social trust, we proceed with the model with only the first set of modifications. This model will be used in our mediation analysis. The model can be visualized in Figure \ref{fig:graph-pol}.
 ```{r improved-political-2, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 fit_adj_2 <- fit_improved_politics_model_2(df_subset)
 caption <- paste("Modified 3-factor model for trust in government, trust in people, and political ability. 
@@ -114,7 +113,6 @@ print_fit(fit_adj_2, caption, label)
 # Compare all 3 models
 compare_poli_adj(fit_politics, fit_adj_1, fit_adj_2)
 ```
-The model can be visualized below.
-```{r graph-model, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+```{r graph-pol, results='asis', echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Graph structure of 3-factor CFA model", fig.align='center'}
 graph_model(fit_adj_1)
 ```

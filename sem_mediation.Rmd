@@ -1,16 +1,12 @@
-# Mediation: political interest and ability
+# Mediation: Trust in government
 ```{r load-4, include=FALSE}
 df_subset <- data_processing(df)
 ```
 Having developed a reliable measurement model for our constructs, we are now 
 prepared to specify the structural part of our model.
-Specifically, we consider a mediation model to explore the influence of political interest on political ability.
-We include the indirect effect of political interest through government trust. We also consider the influence of 
-trust in people on government trust.
-
-what is the effect of political interest and trust in government 
-on how people conceive of their ability to participate in politics?
-Furthermore, is there a relationship between government trust and social trust?
+Specifically, we consider a mediation model to explore the influence of political interest on political ability. We include the indirect effect of political interest through government trust. We also consider the influence of social trust on government trust. \citet{Zmerili-2008} find that there is a strong relationship
+between these two trust-related factors, potentially in contrast to previous work at the individual level. They state, "The figures suggest that generalized social trust, political confidence, and satisfaction with democracy are indeed tied together in a tight three-cornered syndrome" (p. 719). While not considering satisfaction with democracy here, we are interested on the relationship between trust and political activity and participation. We mediate social trust through government trust because, as described in \citet{Kim-2014}, there is a positive relationship between trust in people and institutions. However, trust in individuals does not necessarily transfer directly to being more likely to 
+engage in political activities. Therefore, mediation is suitable to model this relationship. 
 
 The mediation model is written as 
 \begin{verbatim}
@@ -23,11 +19,8 @@ The mediation model is written as
     # Add residual covariance
     actrolga ~~ cptppola
     trstep ~~ trstun
-    # Add residual covariance
-    trstep ~~ trstun
-    trstprl ~~ trstep
     # Direct effect
-    political_able ~ c1*polintr
+    political_able ~ c1*polintr + c2*people_trust
     # Mediator
     # Path A
     gov_trust ~ a1*people_trust + a2*polintr
@@ -38,8 +31,9 @@ The mediation model is written as
     ab_interest := a2*b1
     # Total effect
     total_interest := c1 + ab_interest
-    total_trust := c1 + ab_trust
+    total_trust := c2 + ab_trust
 \end{verbatim}
+The model can be visualized in Figure \ref{fig:graph-mediation}.
 
 ```{r mediation, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 library("lavaan")
@@ -48,14 +42,38 @@ caption <- "3-factor medidation model, considering structural relationship
     between trust in people and trust in government"
 label <- "three-fact-mediation"
 print_fit(fit_med, caption, label)
+print_med_fit_measures(fit_med)
 ```
-Table \ref{tab:three-fact-mediation} shows the estimates for the mediation model.
-We can see that the term \verb+ab\_interest := a2*b1+ is significant. Therefore, government trust
+Table \ref{tab:med-fit} shows the fit measures for the mediation model, which we find
+to be adequate. Table \ref{tab:three-fact-mediation} shows the parameter estimates.
+We can see that the indirect effect \verb+ab_interest+ is significant. Therefore, government trust
 mediates between political interest and one's described ability to participate in 
-the political system. Additionally, the total effect, \verb+total_interest+,  is significant, 
-The model can be visualized below.
-```{r graph-mediation, results='asis', echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Mediation model graph structure"}
+the political system. However, the direct path from political interest to 
+perceived political ability is also significant, meaning that political interest 
+interacts with perceived political ability through both of these 
+pathways. The coefficient for political interest between
+government trust and political ability was negative in both cases, indicating that 
+as political interest increases, trust in government and political ability decreases.
+Furthermore, the total effect for political interest on political ability was negative
+and significant. The reason for these negative relationships isn't necessarily clear, though it was also observed in the correlation plot in Figure \ref{fig:exploratory}. 
+
+While it may be the case that individuals who are more politically interested may be more likely to participate in
+politics, this doesn't necessarily mean they will trust the political system or the government
+institutions more. In fact, higher political interest could indicate more awareness of
+political issues and thus more skepticism of the political system or processes, depending on the country.
+Given the negative correlation between political interest and both latent factors (government trust and poltical ability), the relationship merits more investigation.
+
+The indirect effect of social trust, \verb+ab_trust+, is also significant. 
+This indicates that government trust mediates this effect. Additionally, the direct effect
+of social trust on political ability is insignificant. In this case, social trust only
+affects political ability through government trust. This is somewhat reasonable: 
+While people who are more trusting in general may be more likely to trust institutions,
+there may not be any relationship between the tendency to trust people and the tendency to 
+believe in the effectiveness of actions taken through the political system. However, people who
+trust institutions could be much more likely to believe that they can effect 
+change through these institutions. Of course, this will be highly dependent on the country 
+and political system of interest.
+
+```{r graph-mediation, results='asis', echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Mediation model graph structure", fig.align='center'}
 graph_mediation(fit_med)
 ```
-
-

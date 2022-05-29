@@ -1,7 +1,7 @@
 ---
 title: "Structural Equation Modelling of Political Trust and Ability"
-author: "Max Savery"
-date: "Academic year 2021-2022, 2nd semester\\`r Sys.Date()`"
+author: "Max Emmet Savery"
+date: "Academic year 2021-2022, 2nd semester"
 site: bookdown::bookdown_site
 documentclass: article
 output: bookdown::gitbook
@@ -13,19 +13,19 @@ description: "Bookdown for structural equations project"
 ---
 # Technical preface
 
-This is the bookdown \citep{R-bookdown} report for the Structural Equations Modelling course. Bookdown was chosen 
+This is the bookdown \citep{R-bookdown} report for the Structural Equations Modelling course G0B65B, offered by KU Leuven. Bookdown was chosen 
 as the medium for generating the report as part of my personal effort to support 
 reproducible computational science. The lavaan package \citep{R-lavaan} was used for all structural equation models.
 
-The bookdown report is hosted at <https://saverymax.github.io/sem-political-trust/>. The R/Rmd code for the report can be found here: <https://github.com/saverymax/sem-political-trust>. The plain R script to run 
+The bookdown report is hosted at <https://saverymax.github.io/sem-political-trust/>. The R/Rmd code can be found here: <https://github.com/saverymax/sem-political-trust>. An R script to run 
 all the code used in this report is available at <https://github.com/saverymax/sem-political-trust/blob/main/Max_Savery_SEM_project_code.R>
 
-To locally render the book, install bookdown and run 
+To locally render the book, run 
 ```
 install.packages("bookdown")
 bookdown::render_book('index.Rmd', 'bookdown::pdf_book')
 ```
-That being said, given the time constraints of the semester and finishing my master's thesis, the bookdown report isn't perfect. But having a more-or-less well-documented and reproducible project
+That being said, given the time constraints of the semester and finishing my master's thesis, the bookdown formatting isn't perfect. But having a more-or-less well-documented and reproducible project
 is better than not having one at all. I heavily relied on <https://github.com/rstudio/bookdown-demo> 
 for setting it up.
 ```{r libs, include=FALSE}
